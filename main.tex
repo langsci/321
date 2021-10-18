@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     Language Science Press Master File       %%%
+%%%         follow the instructions below        %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Everything following a % is ignored
+% Some lines start with %. Remove the % to include them
+
+\documentclass[output=book,
+% colorlinks,citecolor=brown,
+%  draft,draftmode,
+% showindex,
+% nobabel,
+%  booklanguage=german,
+%  multiauthors,
+		  ]{langscibook}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%          additional packages                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{localmetadata.tex}
+\input{localpackages.tex}
+\input{localhyphenation.tex}
+\addbibresource{bibliographie.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Frontmatter                      %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\input{localcommands.tex}
+
+\maketitle
+\frontmatter
+
+% \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
+{\sloppy\tableofcontents}
+%  \include{chapters/preface}
+ \include{chapters/acknowledgements}
+%  \include{chapters/abbreviations}
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Chapters                   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{chapters/1_introduction}
+\include{chapters/2_theories}
+\include{chapters/3_theories_experiments}
+\include{chapters/4_infotheory}
+\include{chapters/5_infotheory_experiments}
+\include{chapters/6_discussion}
+\include{chapters/appendix}
+
+% copy the lines above and adapt as necessary
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%             Backmatter                       %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{localseealso.tex}
+% % There is normally no need to change the backmatter section
+\input{backmatter.tex}
+
+\BackBody{This book investigates the syntax and usage of fragments (Morgan 1973), apparently subsentential utterances like ``A coffee, please!'' which fulfill the same communicative function as the corresponding full sentence ``I'd like to have a coffee, please!''.  Even though such utterances are frequently used, they challenge the central role that has been attributed to the notion of sentence in linguistic theory. 
+
+The first part of the book is dedicated to the sytactic analysis of fragments, which is investigated with experimental methods. Currently, there are competing theoretical analyses of fragments, which relied almost only on introspective judgements. The experiments presented in this book consistitute a first systematic evaluation of their predictions and, taken together, support an in situ ellipis account of fragments, as has been suggested by Reich (2007).
+
+The second part of the book addresses the questions of why fragments are used at all, and under which circumstances they are preferred over complete sentences. Syntactic accounts impose licensing conditions on fragments, but they do not explain, why fragments are sometimes (dis)preferred provided that their usage is licensed. This book proposes an information-theoretic account of fragments, which is supported by two experiments: In order to distribute processing effort uniformly across the utterance, predictable words are more likely to be omitted and additional redundancy is inserted before unpredictable words.}
+
+\end{document}
+
+% you can create your book by running
+% xelatex main.tex
