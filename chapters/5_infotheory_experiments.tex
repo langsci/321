@@ -64,14 +64,14 @@ In order to quantify the likelihood of an event at a specific point in the scrip
 
 \node (header) at (0,7.7) {
 \begin{minipage}{13cm}
-\textit{Script: Restaurant}\\
+\textbf{Script: Restaurant}\\
 Track: Coffee shop\\
 \end{minipage}
 };
 
 \node (props) at (0,6.2) {
 \begin{minipage}{13cm}
-\textit{Props}\\
+\textbf{Props}\\
 Tables, Menu, Food, \\
 Check, Money
 \end{minipage}
@@ -79,7 +79,7 @@ Check, Money
 
 \node (roles) at (8,7.7) {
 \begin{minipage}{13cm}
-\textit{Roles}\\
+\textbf{Roles}\\
 Customer, Waiter, Cook, \\
 Cashier, Owner
 \end{minipage}
@@ -87,7 +87,7 @@ Cashier, Owner
 
 \node (conditions) at (0,4) {
 \begin{minipage}{13cm}
-\textit{Entry conditions}\\
+\textbf{Entry conditions}\\
 customer is hungry\\
 customer has money\\
 \end{minipage}
@@ -95,7 +95,7 @@ customer has money\\
 
 \node (results) at (8,4.5) {
 \begin{minipage}{13cm}
-\textit{Results}\\
+\textbf{Results}\\
 customer has less money\\
 owner has more money\\
 customer is not hungry\\
@@ -105,7 +105,7 @@ customer is pleased (optional)\\
 
 \node (entering) at (0,0.6) {
 \begin{minipage}{13cm}
-\textit{Scene 1: Entering}\\
+\textbf{Scene 1: Entering}\\
 customer enters restaurant\\
 customer looks at tables\\
 customer decides where to sit\\
@@ -116,7 +116,7 @@ customer sits down\\
 
 \node (ordering1) at (0,-2.4) {
 \begin{minipage}{13cm}
-\textit{Scene 2: Ordering}\\
+\textbf{Scene 2: Ordering}\\
 (menu on table)~~~(waiter brings menu)\\
 customer takes menu
 \end{minipage}
@@ -710,8 +710,7 @@ you can.\textsc{sbjv.2sg} already \textsc{prt} the plates on the table put\\
 
 In order to estimate (and to later compare) the surprisal\is{Shannon information} of realized and originally omitted words, all ellipses, i.e. omissions of words that are obligatory in full sentences, were reconstructed. This involved specifically the insertion of omitted main verbs and arguments. Note that the set of ellipses in the data encompasses not only those omissions that yield fragments according to the definition provided in Section \ref{sec:intro-fragments}, but also argument omissions. Testing whether omissions of individual words are in line with the predictions of UID\is{Uniform Information Density} requires not only to compare fragments and complete sentences, but to take into account also the possibility of other argument ellipses, like topic\is{Topic drop} or object drop\is{Object drop}.
 
-\begin{sloppypar}
-Ellipses could in general be unambiguously resolved, because the reconstruction procedure operated on the preprocessed simplified representations described above and there were no lexical alternatives to choose from. If there were several possibilities of enriching a fragment, the strategy that required the least amount of insertions and default subject-initial word order\is{Word order} was pursued. All words inserted during this procedure received an additional tag \texttt{.NULL}, which indicated that they had been omitted in the utterances produced by the subjects. The purpose of the tag was to keep track of which words had been omitted and which ones had been realized in the original data set. In the statistical analysis, I used this binary \textsc{Omission} predictor as the dependent variable.\end{sloppypar}
+Ellipses could in general be unambiguously resolved, because the reconstruction procedure operated on the preprocessed simplified representations described above and there were no lexical alternatives to choose from. If there were several possibilities of enriching a fragment, the strategy that required the least amount of insertions and default subject-initial word order\is{Word order} was pursued. All words inserted during this procedure received an additional tag \texttt{.NULL}, which indicated that they had been omitted in the utterances produced by the subjects. The purpose of the tag was to keep track of which words had been omitted and which ones had been realized in the original data set. In the statistical analysis, I used this binary \textsc{Omission} predictor as the dependent variable.
 
 Based on the annotated data, I created two versions of the data set: The \textit{original} data set, where I kept track of actual omissions, and the \textit{enriched} data set, which was used only for the purpose of surprisal\is{Shannon information} estimation. This data set contains all of the originally produced words and those that had been inserted through ellipsis reconstruction. I removed the \texttt{.NULL} tags assigned to reconstructed words from the words in this data set, since otherwise the reconstructed and realized occurrences of the same word would be treated as different lexicon entries during surprisal\is{Shannon information} calculation. Using a data set without omissions for surprisal\is{Shannon information} estimation addresses a central problem of language modeling on elliptical data: If UID\is{Uniform Information Density} is correct, word probabilities estimated from a regular corpus\is{Corpus} are not proportional to the likelihood of these words. Since speakers omit predictable words more often, they are expected to be rare in the corpus\is{Corpus}, or at least not as frequent as they would be without omissions. Therefore, word probabilities estimated from a regular corpus\is{Corpus} are not proportional to the likelihood of these words. This circularity issue, which is discussed in detail below in Section \ref{sec:scripts-production-surprisal-context}, does not arise in data sets which do not contain any omissions.
 
@@ -727,7 +726,7 @@ I explore effects of three information-theoretic\is{Information theory} predicto
 
 \subsubsection{Unigram surprisal}
 
-Unigram language models\is{Unigram language model} with Good-Turing discount were trained on the enriched data ($n \sim 100$) for each script\is{Script knowledge} using the SRILM toolkit \citep{stolcke2002}. I estimated unigram surprisal\is{Shannon information} for each script\is{Script knowledge} independently. This method allows for the interpretation of the probability estimate $S(w_i) = -\log_2\;p(w_i)$ for a word $w_i$ as the probability of $w_i$  given extralinguistic context\is{Context, extralinguistic}, which is set by the context story, i.e. $S(w_i) = -\log_2\;p(w_i\mathbin{|} context_{extraling.})$. The by-word unigram surprisal\is{Shannon information} values were then extracted from the language model files and annotated with Python scripts for each word in the production data. 
+Unigram language models\is{Unigram language model} with Good-Turing discount were trained on the enriched data ($n \sim 100$) for each script\is{Script knowledge} using the SRILM toolkit \citep{stolcke2002}. I estimated unigram surprisal\is{Shannon information} for each script\is{Script knowledge} independently. This method allows for the interpretation of the probability estimate $S(w_i) = -\log_2 p(w_i)$ for a word $w_i$ as the probability of $w_i$  given extralinguistic context\is{Context, extralinguistic}, which is set by the context story, i.e. $S(w_i) = -\log_2 p(w_i\mathbin{|} context_{extraling.})$. The by-word unigram surprisal\is{Shannon information} values were then extracted from the language model files and annotated with Python scripts for each word in the production data. 
 
 \subsubsection{Taking linguistic context into account}
 \label{sec:scripts-production-surprisal-context}
@@ -769,13 +768,13 @@ This measure increases the more $w_i$ narrows the set of parses that are compati
 In this situation, processing \texttt{pour} excludes only the parse in \Last[c], so that $\alpha_{n} = 0.97$. The prefix probability before parsing \texttt{pour}, $\alpha_{n-1} = 1$, because before processing any input no parse is excluded. The surprisal\is{Shannon information} of \texttt{pour} is thus calculated as shown in Equation \ref{eq:surprisal-pour}.
 
 \begin{equation}
- \displaystyle S(pour) = \log_2(\frac{1}{0.97}) = 0.04 \label{eq:surprisal-pour}
+ \displaystyle S(pour) = \log_2 \frac{1}{0.97} = 0.04 \label{eq:surprisal-pour}
 \end{equation}
 
 The surprisal\is{Shannon information} of \textit{pasta} after processing \textit{pour} is calculated as shown in Equation \ref{eq:surprisal-pasta}. Since \Last[c] has been previously discarded by processing \texttt{pour}, $\alpha_{n-1} = 0.97$. Processing \texttt{pasta} additionally excludes \Last[b] and \Last[d], so that $\alpha_{n-1} = 0.75$.
 
 \begin{equation}
- \displaystyle S(pasta\mathbin{|}pour) = \log_2(\frac{0.97}{0.75}) = 0.37 \label{eq:surprisal-pasta}
+ \displaystyle S(pasta\mathbin{|}pour) = \log_2 \frac{0.97}{0.75} = 0.37 \label{eq:surprisal-pasta}
 \end{equation}
 \is{Parser, parallel|)}
 
@@ -788,7 +787,7 @@ This method cannot be applied as-is to fragments. For instance, given the discus
 Therefore, I propose to extend \citeauthor{hale2001}'s method by allowing for an arbitrary number of omissions to occur before and after each word. Checking whether a parse is compatible with an input now does not require for the input to exactly match the parse, starting from its onset, but that the input could have been derived by ellipsis from the parse. For instance, the fragment in \Last can only be derived from \LLast[a] by omitting \texttt{pour} (and \texttt{pot.GOAL}, but this does not matter for estimating the surprisal\is{Shannon information} of \texttt{pasta}). Processing \texttt{pasta} thus excludes the parses in \LLast[b-d], which do not contain this expression. The surprisal\is{Shannon information} of \texttt{pasta} can then be calculated from the total probability mass of these parses by comparing the prefix probabilities as shown in Equation \ref{eq:pasta-s}:
 
 \begin{equation}
-S(pasta) = \log_2 (\frac{1}{0.75}) = 0.42 \label{eq:pasta-s}
+S(pasta) = \log_2 \frac{1}{0.75} = 0.42 \label{eq:pasta-s}
 \end{equation}
 
 This simple modification of \citeauthor{hale2001}'s approach allows in the same way to estimate the surprisal\is{Shannon information} of omitted and realized words in more complex discontinuous fragments. For instance, consider the case of a fragment like \Next, for which by-word surprisal\is{Shannon information} is to be estimated given the probability distribution in \ref{ex:contexts-pd}. The surprisal\is{Shannon information} of \texttt{pour} is calculated as described in the previous paragraph based on the exclusion of \LLast[c] only. The surprisal\is{Shannon information} of the omitted \texttt{pasta} in the context of \texttt{pour} is calculated just like described above for that of the realized word \texttt{pasta}. Note that for the purpose of surprisal\is{Shannon information} estimation it does not matter whether the target word itself has been omitted. This is desirable, since a word's surprisal must be independent from its own omission.
@@ -798,7 +797,7 @@ This simple modification of \citeauthor{hale2001}'s approach allows in the same 
 The surprisal\is{Shannon information} of \texttt{pot.GOAL} given \texttt{pour} is then equivalent to the probability mass of the parses that have not been excluded after processing \texttt{pour} but are so after processing \texttt{pot.GOAL}. Since only \Last[d] is excluded by \texttt{pot.GOAL}, this yields a surprisal\is{Shannon information} of 0.03 bits. Unlike it would in an \textit{n}-gram model\is{N-gram language model} trained on the enriched data set, the omitted word \texttt{pasta} does not contribute to the surprisal\is{Shannon information} of \texttt{pot.GOAL} in the example:
 
 \begin{equation}
-S(pot.GOAL\mathbin{|}pour) = \log_2(\frac{0.97}{0.95}) = 0.03
+S(pot.GOAL\mathbin{|}pour) = \log_2 \frac{0.97}{0.95} = 0.03
 \end{equation}
 
 This method avoids the circularity issues related to training language models on elliptical data discussed above. On the one hand, since the complete structures from which the probabilities are derived do not contain omissions, a target word's surprisal\is{Shannon information} is not affect by the actual frequency of its omission. On the other hand, only words that have been actually produced are included in the context of the target word and can affect its probability. This avoids the concern that \textit{n}-gram models\is{N-gram language model} trained on the enriched data falsely include these words in the context. Like the approach by \citet{hale2001}, the approach is fully incremental, because processing effort\is{Processing effort}, i.e. surprisal\is{Shannon information}, arises exactly at the word that triggers the rejection of a parse. By allowing for omissions between words, my approach is similar to skip-gram models\is{Skip-gram language model} \citep{jans.etal2012}. However, unlike a skip-gram model, it does not skip a fixed number of words but take into account the possibility that words \textit{could} have been omitted. A further benefit is that this approach considers as much context as possible, unlike \textit{n}-gram models\is{N-gram language model}. The method presented here covers the complete context, that is, the contextual information about the point in the script\is{Script knowledge} at which the utterance occurs and all material that precedes this word within the utterance.
@@ -1080,7 +1079,7 @@ Before discussing a potential solution to this issue, note that this is a concep
 \subsection{Game-theoretic pragmatics}
 \is{Game theory|(}A framework that might overcome this problem is game-theoretic\is{Game theory} pragmatics. Game-theoretic approaches provide a model of context\is{Context, extralinguistic} which takes into account the knowledge and preferences of rational agents. The model allows for determining which action is the most useful one to pursue for each of the agents. Such models have been recently gaining popularity in pragmatics and been applied to phenomena like implicature \citep{vanrooy2004, benz.vanrooij2007, franke2009, jager2012, goodman.stuhlmuller2013, gotzner.benz2018} and reference \citep{frank.goodman2012, rohde.etal2012, sikos.etal2019}. \is{Iterated Best Response model|(}In what follows I base my expositions on the approach taken by \citet{franke2009}, who develops a game-theoretic\is{Game theory} account of pragmatic reasoning that models implicatures, the \textit{Iterated Best Response} (IBR\is{Iterated Best Response model}) model. He interprets communicative situations as signaling games, which are played by a speaker and a hearer and require a speaker to pick an utterance in order to get a message across.%
 %
-\footnote{The terminology used in the game-theoretic\is{Game theory} literature differs from the one that I use, which I maintain in order to keep the mapping between terms and concepts throughout this book. In the game-theoretic\is{Game theory} literature, the utterance is called the \textit{message} and what is being communicated (I use the term \emph{message} for this) is labeled the \textit{state}.}\afterfn%
+\footnote{The terminology used in the game-theoretic\is{Game theory} literature differs from the one that I use, which I maintain in order to keep the mapping between terms and concepts throughout this book. In the game-theoretic\is{Game theory} literature, the utterance is called the \textit{message} and what is being communicated (I use the term \textit{message} for this) is labeled the \textit{state}.}\afterfn%
 %
 Even though Franke investigates a different phenomenon, the problem of mapping utterances and interpretations remains the same, so in principle it can be straightforwardly applied to the interpretation of fragments.
 
