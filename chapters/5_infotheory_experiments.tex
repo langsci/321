@@ -64,14 +64,14 @@ In order to quantify the likelihood of an event at a specific point in the scrip
 
 \node (header) at (0,7.7) {
 \begin{minipage}{13cm}
-\textbf{Script: Restaurant}\\
+\textit{Script: Restaurant}\\
 Track: Coffee shop\\
 \end{minipage}
 };
 
 \node (props) at (0,6.2) {
 \begin{minipage}{13cm}
-\textbf{Props}\\
+\textit{Props}\\
 Tables, Menu, Food, \\
 Check, Money
 \end{minipage}
@@ -79,7 +79,7 @@ Check, Money
 
 \node (roles) at (8,7.7) {
 \begin{minipage}{13cm}
-\textbf{Roles}\\
+\textit{Roles}\\
 Customer, Waiter, Cook, \\
 Cashier, Owner
 \end{minipage}
@@ -87,7 +87,7 @@ Cashier, Owner
 
 \node (conditions) at (0,4) {
 \begin{minipage}{13cm}
-\textbf{Entry conditions}\\
+\textit{Entry conditions}\\
 customer is hungry\\
 customer has money\\
 \end{minipage}
@@ -95,7 +95,7 @@ customer has money\\
 
 \node (results) at (8,4.5) {
 \begin{minipage}{13cm}
-\textbf{Results}\\
+\textit{Results}\\
 customer has less money\\
 owner has more money\\
 customer is not hungry\\
@@ -105,7 +105,7 @@ customer is pleased (optional)\\
 
 \node (entering) at (0,0.6) {
 \begin{minipage}{13cm}
-\textbf{Scene 1: Entering}\\
+\textit{Scene 1: Entering}\\
 customer enters restaurant\\
 customer looks at tables\\
 customer decides where to sit\\
@@ -116,7 +116,7 @@ customer sits down\\
 
 \node (ordering1) at (0,-2.4) {
 \begin{minipage}{13cm}
-\textbf{Scene 2: Ordering}\\
+\textit{Scene 2: Ordering}\\
 (menu on table)~~~(waiter brings menu)\\
 customer takes menu
 \end{minipage}
@@ -710,7 +710,8 @@ you can.\textsc{sbjv.2sg} already \textsc{prt} the plates on the table put\\
 
 In order to estimate (and to later compare) the surprisal\is{Shannon information} of realized and originally omitted words, all ellipses, i.e. omissions of words that are obligatory in full sentences, were reconstructed. This involved specifically the insertion of omitted main verbs and arguments. Note that the set of ellipses in the data encompasses not only those omissions that yield fragments according to the definition provided in Section \ref{sec:intro-fragments}, but also argument omissions. Testing whether omissions of individual words are in line with the predictions of UID\is{Uniform Information Density} requires not only to compare fragments and complete sentences, but to take into account also the possibility of other argument ellipses, like topic\is{Topic drop} or object drop\is{Object drop}.
 
-Ellipses could in general be unambiguously resolved, because the reconstruction procedure operated on the preprocessed simplified representations described above and there were no lexical alternatives to choose from. If there were several possibilities of enriching a fragment, the strategy that required the least amount of insertions and default subject-initial word order\is{Word order} was pursued. All words inserted during this procedure received an additional tag \texttt{.NULL}, which indicated that they had been omitted in the utterances produced by the subjects. The purpose of the tag was to keep track of which words had been omitted and which ones had been realized in the original data set. In the statistical analysis, I used this binary \textsc{Omission} predictor as the dependent variable.
+\begin{sloppypar}
+Ellipses could in general be unambiguously resolved, because the reconstruction procedure operated on the preprocessed simplified representations described above and there were no lexical alternatives to choose from. If there were several possibilities of enriching a fragment, the strategy that required the least amount of insertions and default subject-initial word order\is{Word order} was pursued. All words inserted during this procedure received an additional tag \texttt{.NULL}, which indicated that they had been omitted in the utterances produced by the subjects. The purpose of the tag was to keep track of which words had been omitted and which ones had been realized in the original data set. In the statistical analysis, I used this binary \textsc{Omission} predictor as the dependent variable.\end{sloppypar}
 
 Based on the annotated data, I created two versions of the data set: The \textit{original} data set, where I kept track of actual omissions, and the \textit{enriched} data set, which was used only for the purpose of surprisal\is{Shannon information} estimation. This data set contains all of the originally produced words and those that had been inserted through ellipsis reconstruction. I removed the \texttt{.NULL} tags assigned to reconstructed words from the words in this data set, since otherwise the reconstructed and realized occurrences of the same word would be treated as different lexicon entries during surprisal\is{Shannon information} calculation. Using a data set without omissions for surprisal\is{Shannon information} estimation addresses a central problem of language modeling on elliptical data: If UID\is{Uniform Information Density} is correct, word probabilities estimated from a regular corpus\is{Corpus} are not proportional to the likelihood of these words. Since speakers omit predictable words more often, they are expected to be rare in the corpus\is{Corpus}, or at least not as frequent as they would be without omissions. Therefore, word probabilities estimated from a regular corpus\is{Corpus} are not proportional to the likelihood of these words. This circularity issue, which is discussed in detail below in Section \ref{sec:scripts-production-surprisal-context}, does not arise in data sets which do not contain any omissions.
 
