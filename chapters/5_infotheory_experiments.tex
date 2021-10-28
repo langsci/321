@@ -755,7 +755,7 @@ Therefore, I take the set of unique produced utterances in the enriched data set
 \is{Parser, parallel|(}Given this general setup, \citet{hale2001} defines surprisal\is{Shannon information} as the logarithm of the ratio of the prefix probability \textalpha, i.e. the probability mass of the parses that are compatible with an input \textit{before} parsing that word to the probability mass of the parses that remain active \textit{after} processing it:
 
 \begin{equation}
- \displaystyle S(w_n) = \log_2 \frac{\alpha_{n-1}}{\alpha_n}
+ \displaystyle S(w_n) = \log_2 \left(\frac{\alpha_{n-1}}{\alpha_n}\right)
 \end{equation}
 
 This measure increases the more $w_i$ narrows the set of parses that are compatible with the input as compared to $\alpha_{n-1}$. If $w_i$ is compatible with all parses that $w_{i-1}$ is compatible with, it equals 0. In the case of utterance-initial words, surprisal\is{Shannon information} is thus equivalent to the negative logarithm of the cumulated probability of all parses (that is, enriched complete structures) that begin with this word.  For illustration, consider the case of an utterance like \Next[a] in the artificial example in \Next, where there are only the four parses in \Next[a--d].
@@ -768,13 +768,13 @@ This measure increases the more $w_i$ narrows the set of parses that are compati
 In this situation, processing \texttt{pour} excludes only the parse in \Last[c], so that $\alpha_{n} = 0.97$. The prefix probability before parsing \texttt{pour}, $\alpha_{n-1} = 1$, because before processing any input no parse is excluded. The surprisal\is{Shannon information} of \texttt{pour} is thus calculated as shown in Equation \ref{eq:surprisal-pour}.
 
 \begin{equation}
- \displaystyle S(pour) = \log_2 \frac{1}{0.97} = 0.04 \label{eq:surprisal-pour}
+ \displaystyle S(pour) = \log_2 \left(\frac{1}{0.97} = 0.04\right) \label{eq:surprisal-pour}
 \end{equation}
 
 The surprisal\is{Shannon information} of \textit{pasta} after processing \textit{pour} is calculated as shown in Equation \ref{eq:surprisal-pasta}. Since \Last[c] has been previously discarded by processing \texttt{pour}, $\alpha_{n-1} = 0.97$. Processing \texttt{pasta} additionally excludes \Last[b] and \Last[d], so that $\alpha_{n-1} = 0.75$.
 
 \begin{equation}
- \displaystyle S(pasta\mathbin{|}pour) = \log_2 \frac{0.97}{0.75} = 0.37 \label{eq:surprisal-pasta}
+ \displaystyle S(pasta\mathbin{|}pour) = \log_2 \left(\frac{0.97}{0.75}\right) = 0.37 \label{eq:surprisal-pasta}
 \end{equation}
 \is{Parser, parallel|)}
 
@@ -883,7 +883,7 @@ Entropy\is{Entropy} might be a better predictor than the lexicon size, because e
 The regression analyses described in what follows investigate effects of the three information-theoretic\is{Information theory} predictors described in the preceding section on the omission of words. \textsc{UnigramSurprisal} models the likelihood of words given extralinguistic context\is{Context, extralinguistic}, \textsc{ContextSurprisal}\is{Shannon information} additionally takes linguistic context\is{Context, linguistic} into account, and \textsc{SurprisalReduction} quantifies how much inserting a word reduces the surprisal\is{Shannon information} of the following one. Additionally, I annotated the position of the word in the utterance (numeric). As I discussed in Section \ref{sec:infotheory-uid}, in the literature there is evidence for optimization of word order\is{Word order} with respect to UID\is{Uniform Information Density}. On average, context\is{Context, linguistic} reduces the information\is{Shannon information} of words, therefore placing more informative\is{Shannon information} words toward the end of the utterance yields a more uniform ID profile\is{Information density}. In Section \ref{sec:scripts-production-results-uniformity}, I show that this prediction is borne out. Table \ref{tab:production-length} provides an overview of the distribution of utterance lengths. All preprocessed utterances had a length between one and five words. As there were only three utterances with a length of five and I analyzed utterance lengths with an ordinal model these three utterances were excluded from further analyses due to data sparseness.
 
 \begin{table}[t]
-\begin{tabular}{l p{1cm} p{.9cm} p{.9cm} p{.9cm} p{.9cm}}
+\begin{tabular}{l *{5}{c}}
 \lsptoprule
 Length (words) & 1 & 2 & 3 & 4 & 5\\
 \midrule
@@ -954,10 +954,10 @@ Taken together, both unigram\is{Unigram language model} and context dependent su
 
 In order to investigate the prediction of UID\is{Uniform Information Density} that redundancy is inserted before unpredictable words in order to smooth peaks, I conducted a third analysis that additionally considers an effect of \textsc{Surprisal\is{Shannon information}Reduction}. This analysis was conducted on a subset of the data that excluded all utterance-final words, for which \textsc{Surprisal\is{Shannon information}Reduction} cannot be estimated, and all words preceding an ellipsis. The latter were excluded because it would be unreasonable to assume that the preceding word reduced the surprisal\is{Shannon information} of an expression that had been omitted in the actual data. The subset used for this analysis contained a total of 3784 words, that is 55.52\% of the total data. The full model contained main effects of \textsc{Surprisal\is{Shannon information}Reduction} and \textsc{Unigram\is{Unigram language model}Surprisal\is{Shannon information}}, the interaction between both IVs and random intercepts for subjects and items. I chose \textsc{Unigram\is{Unigram language model}Surprisal\is{Shannon information}} rather than \textsc{ContextSurprisal\is{Shannon information}} for two reasons: First, it turned out to be a better predictor of omission than \textsc{ContextSurprisal\is{Shannon information}}, and second, as Table \ref{tab:production-correlations} shows, its correlation with \textsc{Surprisal\is{Shannon information}Reduction} is weaker than for \textsc{ContextSurprisal\is{Shannon information}} ($Pearson's\;r^2 = 0.48$ vs. $Pearson's\;r^2 = 0.62$). Table \ref{tab:production-peaks-troughs-estimates} summarizes the final model. The significant main effect of \textsc{UnigramSurprisal} \glmer{10.39}{0.01} replicates the finding of the previous analyses that predictable words are more likely to be omitted. The significant main effect of \textsc{SurprisalReduction} \glmer{27.03}{\highsig} shows that words that reduce the surprisal\is{Shannon information} of the following word more strongly are more likely to be inserted. The interaction between both predictors is not significant \glmernonsig{0.01}{0.9}. Taken together, this shows that optional omissions in fragments are driven by the tendency to avoid both troughs and peaks in the ID profile\is{Information density}, just like UID\is{Uniform Information Density} predicts.
 
-\begin{table}[t]
+\begin{table}
 \begin{tabular}{l l l l l l}
 \lsptoprule
-Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\   
+Predictor & Estimate & \multicolumn{1}{c}{SE} & \multicolumn{1}{c}{$\chi^2$} &  \multicolumn{1}{c}{$p$} &  \\   
 \midrule
 \textsc{UnigramSurprisal}   &	-0.151 & 0.046 & 10.39 & \textless 0.01 & **\\
 \textsc{Surprisal\is{Shannon information}Reduction} &	-0.349 & 0.07  & 27.03 & \textless \highsig & *** \\
@@ -970,10 +970,12 @@ Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\
 \label{sec:scripts-production-results-uniformity}
 \is{Word order|(}The production data\is{Production task} also might provide some insights into UID\is{Uniform Information Density} effects on word order\is{Word order}. UID\is{Uniform Information Density} predicts that expressions that are relatively unpredictable in the absence of linguistic context\is{Context, linguistic} tend toward being placed at the end of the utterance, because previous linguistic material reduces their surprisal\is{Shannon information}. There are two ways of testing this prediction empirically at my data set. First, following the line of reasoning taken by \citet{genzel.charniak2002}, if context reduces the surprisal\is{Shannon information} of expressions, words that are more informative\is{Shannon information} in the absence of context should be placed at the end of the utterance because this reduces their information\is{Shannon information} as compared to an initial position. Placing uninformative\is{Shannon information} words at the end of the utterance would reduce their surprisal\is{Shannon information} further and hence increase the risk of a trough in the ID profile\is{Information density}. Therefore, if UID\is{Uniform Information Density} is correct, words with a higher unigram\is{Unigram language model} surprisal\is{Shannon information} that are hence informative\is{Shannon information} in the absence of linguistic context\is{Context, linguistic}, should tend toward appearing at the end of the utterance. Second, the effect of information\is{Shannon information} reduction by preceding linguistic context\is{Context, linguistic} should be reflected in my context-dependent surprisal\is{Shannon information} measure. Therefore, words with a lower context-dependent surprisal\is{Shannon information} are predicted to appear later in the utterance.
 
-\begin{table}[t]
+These hypotheses were investigated with CLMMs predicting the outcome of an ordinal DV \textsc{Position} with four ordered levels from \textsc{UnigramSur\-prisal} and \textsc{ContextSurprisal}\is{Shannon information}. The analysis was conducted on the complete data set without distinguishing between originally omitted and realized words, because, if fragments are derived from regular sentences, as my experiments in the first part of this book suggest, word order\is{Word order} and omission are in principle independent from each other. Following the procedure applied in previous experiments, I started with a full model that contained main effects for both IVs, their interaction and a full random effects structure. Table \ref{tab:production-position-estimates} summarizes the final model. The position of a word in the utterance is significantly determined by both IVs. Words with a higher \textsc{UnigramSurprisal} tend to appear later \clmmLR{35.47}{\highsig}, whereas words with a higher \textsc{ContextSurprisal}\is{Shannon information} tend to appear earlier \clmmLR{41.78}{\highsig}. Both observations are in line with UID\is{Uniform Information Density}.\is{Word order|)}
+
+\begin{table}
 \begin{tabular}{l l l l l l}
 \lsptoprule
-Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\   
+Predictor & Estimate & \multicolumn{1}{c}{SE} & \multicolumn{1}{c}{$\chi^2$} &  \multicolumn{1}{c}{$p$} &  \\   
 \midrule
 \textsc{UnigramSurprisal} & \phantom{-}0.475  &  0.057 &  35.47 & \textless \highsig & ***\\
 \textsc{ContextSurprisal}\is{Shannon information}  &  -0.585  &  0.054 & 41.78 & \textless \highsig & *** \\
@@ -981,8 +983,6 @@ Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\
 \end{tabular}
 \caption{Fixed effects in the final GLMM predicting \textsc{Position} from the surprisal estimates.\label{tab:production-position-estimates}}
 \end{table}
-
-These hypotheses were investigated with CLMMs predicting the outcome of an ordinal DV \textsc{Position} with four ordered levels from \textsc{UnigramSur\-prisal} and \textsc{ContextSurprisal}\is{Shannon information}. The analysis was conducted on the complete data set without distinguishing between originally omitted and realized words, because, if fragments are derived from regular sentences, as my experiments in the first part of this book suggest, word order\is{Word order} and omission are in principle independent from each other. Following the procedure applied in previous experiments, I started with a full model that contained main effects for both IVs, their interaction and a full random effects structure. Table \ref{tab:production-position-estimates} summarizes the final model. The position of a word in the utterance is significantly determined by both IVs. Words with a higher \textsc{UnigramSurprisal} tend to appear later \clmmLR{35.47}{\highsig}, whereas words with a higher \textsc{ContextSurprisal}\is{Shannon information} tend to appear earlier \clmmLR{41.78}{\highsig}. Both observations are in line with UID\is{Uniform Information Density}.\is{Word order|)}
 
 \subsubsection{Event likelihood vs. message likelihood}
 \label{sec:scripts-production-results-check}
