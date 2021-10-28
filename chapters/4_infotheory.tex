@@ -40,13 +40,13 @@ In principle, Shannon information\is{Shannon information} could be quantified on
 \footnote{The term \textit{Surprisal}\is{Shannon information} was introduced by \citet{hale2001}, who in turn attributes it to \citet{attneave1959} and accounts for the fact that unexpected messages appear as surprising to the hearer and require more processing effort\is{Processing effort} (see Section \ref{sec:infotheory-effort} for details).}\afterfn%
 
 \begin{equation}
-I = \log_2 \left(\frac{1}{p(message\mathbin{|}context)}\right) = - \log_2 \left( p(message\mathbin{|}context) \right) \label{eq:surprisal}
+I = \log_2 \frac{1}{p(message\mathbin{|}context)} = - \log_2 p(message\mathbin{|}context) \label{eq:surprisal}
 \end{equation}
 
 I illustrated the relationship between probability and information\is{Shannon information} on the basis of sentences, but the definition in \ref{eq:surprisal} can be straightforwardly applied to expressions on any level of linguistic representations. \is{Context, linguistic|(}For instance, on the word level, the information\is{Shannon information} of \textit{beer} in \Last[a] can be calculated as shown in Equation \ref{eq:beer}. Similarly, the information\is{Shannon information} of a phoneme within a word or the likelihood with which  of a specific part of speech follows another one can be quantified.\is{Context, linguistic|)}
 
 \begin{equation}
- I(beer) = - \log_2 \left( p(beer\mathbin{|}the\; pub\; at\; the\; corner\; serves) \right)\label{eq:beer}
+ I(beer) = - \log_2 p(beer\mathbin{|}the\; pub\; at\; the\; corner\; serves) \label{eq:beer}
 \end{equation}
 
 The specific predictions that information theory\is{Information theory} makes with respect to the well-formedness of linguistic expressions result from an interaction of this probabilistic notion of information\is{Shannon information} with the assumption that communication occurs through a \textit{noisy channel}\is{Noisy channel}, which is a crucial part of the communication system that \citet{shannon1948} assumes. Figure \ref{fig:shannon-cystem} illustrates this system. In \citeauthor{shannon1948}'s original framework of communication through a technical device, he defines the components of the system roughly as follows: The \textit{information\is{Shannon information} source} produces the message to be sent, whose form is determined by the modality of communication. For instance, it can range from a sequence of letters in telegraphy to functions over time of different complexity, like an acoustic signal in telephony or spatial coordinates and color in the case of television \citep[380--381]{shannon1948}. The \textit{transmitter} encodes the message into a format that allows it to be sent over the channel. The encoded message is termed the \textit{signal}, which can consist of electric impulses in telephony or sequences of dots, dashes and spaces in telegraphy \citep[382]{shannon1948}. The signal is sent to the \textit{receiver} over the \textit{channel}. In \citeauthor{shannon1948}'s examples, the channel can be the wire or cable the signal is sent across. The receiver has to decode the incoming signal, that is, to convert it back into the original format. The message is then interpreted by the \textit{destination}, which is the intended recipient.
@@ -182,7 +182,7 @@ illustrates this idea with hypothetical information density\is{Information densi
 \begin{minipage}{\textwidth}
 \begin{tikzpicture}
  \node at (0,0) {\includegraphics[scale=1]{figures/uid-example-fragment}};
- \node at (0.5,-2) {\large \sffamily Take~~~~~~~~~~ me ~~~~~~~~~~~~~~~~~~~~to~~~~~ the ~~~university ~~~~~~~~ please};
+ \node at (0.5,-2.5) {\large \sffamily Take~~~~~~~~~~ me ~~~~~~~~~~~~~~~~~~~~to~~~~~ the ~~~university ~~~~~~~~ please};
 \end{tikzpicture}
 \end{minipage}
  \caption{Hypothetical ID profile for the predictable sentence \textit{take me to the university} and the meaning-equivalent fragment \textit{to the university} in the taxi scenario. The blue area illustrates the distribution of information in the fragment and the red area that in the full sentence.\label{fig:fragments-uid-predictable}}
@@ -196,7 +196,7 @@ illustrates this idea with hypothetical information density\is{Information densi
 \begin{minipage}{\textwidth}
 \begin{tikzpicture}
  \node at (0,0) {\includegraphics[scale=1]{figures/uid-example-sentence}};
- \node at (0.3,-2) {\large \sffamily Tell~~~~~ me ~~~~~~~the~~~~~~~~~way ~~~~~~~~~~ to ~~ the~~ university~~~ please};
+ \node at (0.3,-2.5) {\large \sffamily Tell~~~~~ me ~~~~~~~the~~~~~~~~~way ~~~~~~~~~~ to ~~ the~~ university~~~ please};
 \end{tikzpicture}
 \end{minipage}
 \caption{Hypothetical ID profile for the unpredictable sentence \textit{tell me the way to the university} and the meaning-equivalent fragment \textit{to the university} in the taxi scenario. The blue area illustrates the distribution of information in the fragment and the red area that in the full sentence.\label{fig:fragments-uid-unpredictable}}
@@ -286,7 +286,7 @@ But \textit{why} would processing effort\is{Processing effort} be correlated to 
 In \citepos{hale2001} model, the information\is{Shannon information}, and consequently the processing effort\is{Processing effort}, of a word is higher, the larger the cumulated probability mass of the parses\is{Parser, parallel} that it disconfirms is. Formally, \citet[162]{hale2001} derives the surprisal\is{Shannon information} of a word as shown in Equation \ref{eq:surprisalhale}, where the prefix probability $\alpha_n$ is the cumulated probability mass of all parses\is{Parser, parallel} that are compatible with the input at the corresponding word and $\alpha_{n-1}$ is the cumulated probability mass of the parses\is{Parser, parallel} compatible with the previous word.
 
 \begin{equation}
- \displaystyle S(w_n) = \log_2 \left(\frac{\alpha_{n-1}}{\alpha_n}\right) \label{eq:surprisalhale}
+ \displaystyle S(w_n) = \log_2 \frac{\alpha_{n-1}}{\alpha_n} \label{eq:surprisalhale}
 \end{equation}
 
 This measure is equivalent to \citepos{shannon1948} definition of information\is{Shannon information}, because the higher the probability mass of the parses\is{Parser, parallel} that are compatible with a word is, the more predictable this word is. Since all $\alpha\leq1$ and $\alpha_n\leq\alpha_{n-1}$, the larger the probability mass of the parses\is{Parser, parallel} that are compatible with $w_{n-1}$ but not $w_n$ is, the higher is the surprisal\is{Shannon information} of $w_n$. Surprisal\is{Shannon information} equals 0 in case $w_n$ excludes no parse that is compatible with $w_{n-1}$.
