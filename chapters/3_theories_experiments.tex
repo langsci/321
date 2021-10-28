@@ -1665,22 +1665,22 @@ It shall be noted that \citet[710--711]{merchant2004} briefly discusses the (int
 \subsubsection{Procedure}
 The experiment was completed by 38 undergraduate students of Saarland University. All were native speakers of German\il{German}. They were rewarded with the participation in a lottery of 5 $\times$ \currencyEuro{30.00} among all participants. The experiment was conducted in the same session as the production study\is{Production task} on case marking (experiment \ref{exp:case-production}), where subjects were asked to produce utterances referring to graphical stimuli. Subjects were asked to rate the naturalness of the italicized target utterance in the context of the question on a 7-point Likert scale (7= fully natural). In order to prevent possible floor effects, \textsc{Sententiality} was tested as a between subjects variable. Each subject rated\is{Acceptability rating task} 35 items (7 per \textsc{Prefield}\is{Prefield} configuration). The materials were presented together with 21 items of the follow-up to experiment \ref{exp:ccs-german} and 25 unrelated fillers including four ungrammatical controls in individually pseudo-randomized order. A pseudo-randomized presentation ensured that no two items of the same experiment followed each other. Fillers were adapted so as to match the \textsc{Sententiality} of the materials in the list, so that subjects saw either only sentential or only fragment target utterances. This also matched the design of the follow-up to experiment \ref{exp:ccs-german}, which had the same manipulation. One participant rated\is{Acceptability rating task} 50\% or more of the ungrammatical controls with 6 or 7 points on the scale and was therefore excluded from further analysis. 
 
+\subsubsection{Results}\label{sec:mvb-results}
+Figure \ref{fig:mvb-estimates} shows that across all conditions fragments were rated\is{Acceptability rating task} better than sentences and that there was a large extent of variation between conditions. Specifically, the presumably ungrammatical conditions and grammatical conditions do not behave uniformly: The grammatical \textsc{SAdv, XP} and the grammatical \textsc{LocAdv, TempAdv} are both almost equally acceptable as fragments, but strongly differ as prefield\is{Prefield} configurations. Due to these differences, it would not be appropriate to pool the presumably ungrammatical and grammatical conditions. Instead, I conducted pairwise comparisons between each two of the conditions, yielding a series of 10 2$\times$2 contrasts (\textsc{Sententiality}$\times$\textsc{Prefield}) that I analyzed separately. For each of these contrasts I statistically analyzed a subset of the data containing only those data points belonging to the respective condition with CLMMs according to the procedure described in Section \ref{sec:intro-stats}.
+
 \begin{figure}
 \includegraphics[scale=1]{figures/ex3_mvb_estimates}
  \caption{Mean ratings and 95\% confidence intervals across conditions in experiment \ref{exp:mvb}.\label{fig:mvb-estimates}}
 \end{figure}
-
-\subsubsection{Results}\label{sec:mvb-results}
-Figure \ref{fig:mvb-estimates} shows that across all conditions fragments were rated\is{Acceptability rating task} better than sentences and that there was a large extent of variation between conditions. Specifically, the presumably ungrammatical conditions and grammatical conditions do not behave uniformly: The grammatical \textsc{SAdv, XP} and the grammatical \textsc{LocAdv, TempAdv} are both almost equally acceptable as fragments, but strongly differ as prefield\is{Prefield} configurations. Due to these differences, it would not be appropriate to pool the presumably ungrammatical and grammatical conditions. Instead, I conducted pairwise comparisons between each two of the conditions, yielding a series of 10 2$\times$2 contrasts (\textsc{Sententiality}$\times$\textsc{Prefield}) that I analyzed separately. For each of these contrasts I statistically analyzed a subset of the data containing only those data points belonging to the respective condition with CLMMs according to the procedure described in Section \ref{sec:intro-stats}.
 
 \begin{table}
   \begin{tabular}{p{2cm} p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
    \lsptoprule
    & \textsc{Subj, XP} & \textsc{SAdv, XP} & \textsc{Loc, Temp} & \textsc{DO, IO}\\
       \midrule
-  \textsc{Non-CM}  & n.s. & n.s. & \clmmLRbr{11.52}{0.001} & \clmmLRbr{15.77}{\highsig} \\
-  \textsc{DO, IO}  & \clmmLRbr{15.73}{\highsig} & \clmmLRbr{10.95}{0.001} & n.s. & \greycell \\
-  \textsc{Loc, Temp} & \clmmLRbr{14.66}{0.001} & \clmmLRbr{11.32}{0.001} & \greycell  & \greycell \\
+  \textsc{Non-CM}  & n.s. & n.s. & \clmmLR{11.52}{0.001} & \clmmLR{15.77}{\highsig} \\
+  \textsc{DO, IO}  & \clmmLR{15.73}{\highsig} & \clmmLR{10.95}{0.001} & n.s. & \greycell \\
+  \textsc{Loc, Temp} & \clmmLR{14.66}{0.001} & \clmmLR{11.32}{0.001} & \greycell  & \greycell \\
   \textsc{SAdv, XP} &  n.s.\linebreak~~ & \greycell & \greycell& \greycell \\
   \lspbottomrule
  \end{tabular}

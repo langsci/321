@@ -184,7 +184,7 @@ First, each script\is{Script knowledge} has a \textit{header} (``Restaurant''), 
 Each scene in turn comprises a set of (partially) ordered events. Although many events in the restaurant follow each other obligatorily, the ordering of events within a scene is neither complete, nor is the path to be followed through each scene fully linear. The \textit{entering} scene is described as fully linear, but the \textit{ordering} scene can develop in different ways depending on whether the menu is on the table when the customers sit down. If the waiter does not bring food to the customer, it is either possible to return to the food choice event or to skip the \textit{eating} scene and proceed with \textit{leaving}. I address this partially nonlinear ordering of events by estimating their likelihood in the context of the previous one(s) from a script\is{Script knowledge} corpus\is{Corpus}.
 
 \subsubsection{Scripts as primes for upcoming material}
-This brief sketch of \citepos{schank.abelson1977} view on scripts\is{Script knowledge} suggests that scripts\is{Script knowledge} are a promising approximation to extralinguistic context\is{Context, extralinguistic}. Since scripts\is{Script knowledge} about everyday events are shared by a wide part of the population, and their representation is relatively homogeneous between individuals \citep{bower.etal1979}, it is reasonable to assume that a script\is{Script knowledge} evokes similar predictions within at least most of the participants in an experiment. \is{Event chain|(}As I discuss in greater detail in the next section, the basic idea underlying my experiments is to manipulate the likelihood of a target event with a script\is{Script knowledge}-based context story. \Next exemplifies the structure of a sample item used in experiment \ref{exp:scripts-rating} for the pasta cooking script\is{Script knowledge}. The context story consists of a  sentence referring to the script\is{Script knowledge} title \Next[a] and a sequence of the three immediately preceding events \Next[b-d].%
+This brief sketch of \citepos{schank.abelson1977} view on scripts\is{Script knowledge} suggests that scripts\is{Script knowledge} are a promising approximation to extralinguistic context\is{Context, extralinguistic}. Since scripts\is{Script knowledge} about everyday events are shared by a wide part of the population, and their representation is relatively homogeneous between individuals \citep{bower.etal1979}, it is reasonable to assume that a script\is{Script knowledge} evokes similar predictions within at least most of the participants in an experiment. \is{Event chain|(}As I discuss in greater detail in the next section, the basic idea underlying my experiments is to manipulate the likelihood of a target event with a script\is{Script knowledge}-based context story. \Next exemplifies the structure of a sample item used in experiment \ref{exp:scripts-rating} for the pasta cooking script\is{Script knowledge}. The context story consists of a  sentence referring to the script\is{Script knowledge} title \Next[a] and a sequence of the three immediately preceding events \Next[b--d].%
 %
 \footnote{For details on how this structure is generated and why other potential script\is{Script knowledge} events such as \textit{grab a large pot} or \textit{open the pasta package} are not included, see Section \ref{sec:infotheory-scr-corpus-preprocessing}.}\afterfn% 
 %
@@ -198,7 +198,7 @@ This brief sketch of \citepos{schank.abelson1977} view on scripts\is{Script know
     \e. pour pasta into pot\hfill Target event
     \f. set table \hfill Non-script event
 
-Based on \citepos{schank.abelson1977} theory, it seems natural to assume that \Last[e] is predictable in  the context of \Last[a-d], however, it needs to be empirically shown that this is indeed the case. Fortunately, a large bulk of experimental studies indicates that text comprehension involves the generation of predictive inferences about upcoming material \citep[see e.g.][]{bower.etal1979, mckoon.ratcliff1986, vandenbroek1994, vandermeer.etal2002, nuthmann.vandermeer2005,camblin.etal2007, otten.vanberkum2007, hare.etal2009, bicknell.etal2010, matsuki.etal2011,metusalem.etal2012, delogu.etal2018}. For instance, \citet{bower.etal1979} find that sentences referring to script\is{Script knowledge} events are read faster when they follow the immediately preceding event in the script\is{Script knowledge}, as compared to contexts where one or two events in between them are omitted. This suggests that subjects generate expectations that constrain processing\is{Processing effort} as they read script\is{Script knowledge}-based stories. More recently, \citet{vandermeer.etal2002} show that the priming effect of script knowledge\is{Script knowledge} is stronger for upcoming events. Taken together, previous research on script knowledge\is{Script knowledge} predicts that the context story in \Last[a-d] will indeed prime the target event in \Last[e] as compared to the unrelated \Last[f].\is{Script knowledge|)} In what follows, I explain how the likelihood of an event in context was calculated based on the DeScript corpus\is{Corpus} of script knowledge\is{Script knowledge}.
+Based on \citepos{schank.abelson1977} theory, it seems natural to assume that \Last[e] is predictable in  the context of \Last[a--d], however, it needs to be empirically shown that this is indeed the case. Fortunately, a large bulk of experimental studies indicates that text comprehension involves the generation of predictive inferences about upcoming material \citep[see e.g.][]{bower.etal1979, mckoon.ratcliff1986, vandenbroek1994, vandermeer.etal2002, nuthmann.vandermeer2005,camblin.etal2007, otten.vanberkum2007, hare.etal2009, bicknell.etal2010, matsuki.etal2011,metusalem.etal2012, delogu.etal2018}. For instance, \citet{bower.etal1979} find that sentences referring to script\is{Script knowledge} events are read faster when they follow the immediately preceding event in the script\is{Script knowledge}, as compared to contexts where one or two events in between them are omitted. This suggests that subjects generate expectations that constrain processing\is{Processing effort} as they read script\is{Script knowledge}-based stories. More recently, \citet{vandermeer.etal2002} show that the priming effect of script knowledge\is{Script knowledge} is stronger for upcoming events. Taken together, previous research on script knowledge\is{Script knowledge} predicts that the context story in \Last[a--d] will indeed prime the target event in \Last[e] as compared to the unrelated \Last[f].\is{Script knowledge|)} In what follows, I explain how the likelihood of an event in context was calculated based on the DeScript corpus\is{Corpus} of script knowledge\is{Script knowledge}.
 
 \subsection{Estimating event surprisal from script corpora}
 \label{sec:infotheory-script-event-chains}
@@ -223,12 +223,12 @@ Based on \citepos{schank.abelson1977} theory, it seems natural to assume that \L
 \draw [black] (7,-1.5) circle [radius=.7] node[align=center]{add\\salt};
 \draw [black] (11.5,0) circle [radius=.7] node[align=center]{cook\\pasta};
 
-\draw [-stealth] (.8,0) -- (1.7,0) node at (1.25,.25){.51};
-\draw [-stealth] (3.3,0) -- (4.2,0) node at (3.75,.25){.36};
-\draw [-stealth] (5.8,0) -- (8.2,0) node at (7,.25){.69};
-\draw [-stealth] (9.8,0) -- (10.7,0) node at (10.25,.25){.23};
-\draw [-stealth] (5.5,-0.6) -- (6.3,-1.1) node at (5.6,-1.1){.06};
-\draw [-stealth] (7.7,-1.1) -- (8.4,-0.6) node at (8.3,-1.1){.05};
+\draw [-stealth] (.8,0) -- (1.7,0) node [midway, above] {0.51};
+\draw [-stealth] (3.3,0) -- (4.2,0) node [midway, above] {0.36};
+\draw [-stealth] (5.8,0) -- (8.2,0) node [midway, above] {0.69};
+\draw [-stealth] (9.8,0) -- (10.7,0) node [midway, above] {0.23};
+\draw [-stealth] (5.5,-0.6) -- (6.3,-1.1) node at (5.6,-1.1){0.06};
+\draw [-stealth] (7.7,-1.1) -- (8.4,-0.6) node at (8.3,-1.1){0.05};
 
 }
 \end{tikzpicture}
@@ -414,17 +414,15 @@ Experiment \ref{exp:scripts-rating} compares the acceptability\is{Acceptability 
 	  set already \textsc{prt} the.\textsc{acc} kitchen.table please\\
 	  \trans{Set the kitchen table, please.}\exsourceraised{Unpredictable}
 
-The script\is{Script knowledge}-based context story is identical for all conditions. The target utterance in the predictable conditions always refers to the most likely event in the context of the story (\texttt{pour pasta} in the example). In the unpredictable conditions, it refers to an event that did not appear in the script\is{Script knowledge} data at all, or that has a probability of 0 in this context, but that is intuitively not implausible to be talked about in the situation described by the context story. The idea that underlies this approach is that probable events are more likely to be referred to with an utterance than unpredictable ones.%
+The script\is{Script knowledge}-based context story is identical for all conditions. The target utterance in the predictable conditions always refers to the most likely event in the context of the story (\texttt{pour pasta} in the example). In the unpredictable conditions, it refers to an event that did not appear in the script\is{Script knowledge} data at all, or that has a probability of 0 in this context, but that is intuitively not implausible to be talked about in the situation described by the context story. The idea that underlies this approach is that probable events are more likely to be referred to with an utterance than unpredictable ones.\largerpage%
 %
-\footnote{Using the probability of an event as a proxy for that of an utterance is a simplification, and \textit{very} likely events might actually \textit{not} be talked about because they are so obvious. However, experiment \ref{exp:scripts-production} confirms that predictable events are more likely to be talked about.}\afterfn%
-%
-\footnote{In order to rule out the possibility that differences between the \textsc{Predictability} conditions concern other factors than predictability, it would have been desirable to test the \textit{same} utterance in a predictive and an unpredictive context. However, due to the usage of script\is{Script knowledge} corpus\is{Corpus} data, the only possible method was to construct one story per item and to vary the utterance between \textsc{Predictability} conditions. If new (unpredictable) contexts were constructed from scratch, it would have been impossible to estimate the likelihood of the target utterance in the same way as for the corpus\is{Corpus}-based stories. Therefore, I used one context story by item and varied the target utterance between \textsc{Predictability} conditions. Potential differences between both utterances are furthermore accounted for by by-item random slopes for \textsc{Predictability} in the statistical analysis.}\afterfn%
+\footnote{Using the probability of an event as a proxy for that of an utterance is a simplification, and \textit{very} likely events might actually \textit{not} be talked about because they are so obvious. However, experiment \ref{exp:scripts-production} confirms that predictable events are more likely to be talked about.}\footnote{In order to rule out the possibility that differences between the \textsc{Predictability} conditions concern other factors than predictability, it would have been desirable to test the \textit{same} utterance in a predictive and an unpredictive context. However, due to the usage of script\is{Script knowledge} corpus\is{Corpus} data, the only possible method was to construct one story per item and to vary the utterance between \textsc{Predictability} conditions. If new (unpredictable) contexts were constructed from scratch, it would have been impossible to estimate the likelihood of the target utterance in the same way as for the corpus\is{Corpus}-based stories. Therefore, I used one context story by item and varied the target utterance between \textsc{Predictability} conditions. Potential differences between both utterances are furthermore accounted for by by-item random slopes for \textsc{Predictability} in the statistical analysis.}\afterfn%
 %
 Each context story consists of four sentences, the first of which introduced to the script\is{Script knowledge} and mentioned its title, e.g. \textit{cook pasta}.%
 % 
 \footnote{\citet{schank.abelson1977} argue that scripts\is{Script knowledge} are only accessed for text comprehension after their \textit{activation} and \textit{instantiation}. They assume that it were implausible that possibly hundred of scripts\is{Script knowledge} are always active at the same time, but that scripts\is{Script knowledge} are only activated when their \textit{header} is encountered. In the sample item, the header is \textit{cook pasta} in the first sentence of the context story. According to \citet[47--48]{schank.abelson1977}, instantiation consists in copying the complete script\is{Script knowledge} to working memory, so that its components can be accessed during the comprehension of linguistic input. In the theory, instantiation occurs when a subsequent sentence fits the structure of an activated script\is{Script knowledge}, i.e. the hearer encounters a script\is{Script knowledge} event. Even though this distinction is controversial \citep[see e.g.][]{rabs.etal2017}, in the experimental stimuli each script\is{Script knowledge} should be active and instantiated after processing the introductory sentence of the context story and the following sentence, which refers to the first event.}\afterfn%
 %
-The remaining three sentences represent a high-probability event chain\is{Event chain} based on the bigram\is{Bigram language model} event probabilities\is{Event chain} in the preprocessed DeScript data. This sequence ensures that the event in the target sentence \Last[a] (\texttt{pour pasta}) refers to the most likely event to follow the previous one (\texttt{boil water}). The preceding two events in the context story are selected by the same criterion, so that the event that follows them is the most likely one in the script\is{Script knowledge} representations derived from DeScript. Events that were overall rare ($n < 8$) in the processed data for each script\is{Script knowledge} were not considered in this process. Otherwise, for instance an event that was mentioned by only one out of 100 participants would be taken to represent the script knowledge\is{Script knowledge} of the complete population. The context story ends with an introductory sentence like \textit{now Annika says to Jenny} in \Last, that determines which of the characters produces the target utterance. This target utterance differs between the four conditions in \Last[a-d].
+The remaining three sentences represent a high-probability event chain\is{Event chain} based on the bigram\is{Bigram language model} event probabilities\is{Event chain} in the preprocessed DeScript data. This sequence ensures that the event in the target sentence \Last[a] (\texttt{pour pasta}) refers to the most likely event to follow the previous one (\texttt{boil water}). The preceding two events in the context story are selected by the same criterion, so that the event that follows them is the most likely one in the script\is{Script knowledge} representations derived from DeScript. Events that were overall rare ($n < 8$) in the processed data for each script\is{Script knowledge} were not considered in this process. Otherwise, for instance an event that was mentioned by only one out of 100 participants would be taken to represent the script knowledge\is{Script knowledge} of the complete population. The context story ends with an introductory sentence like \textit{now Annika says to Jenny} in \Last, that determines which of the characters produces the target utterance. This target utterance differs between the four conditions in \Last[a--d].
 
 In the predictable conditions, the target utterance refers to the event that is most likely to follow the last event in the context story. The event referred to by the target utterance in the unpredictable conditions has a probability of 0, either because it is not contained in the data for that script\is{Script knowledge}, or because it never appears at this point of the script\is{Script knowledge} in DeScript. All sentential target utterances have a transitive main verb, whose direct object DP\is{Determiner phrase} is equivalent to the target utterance in the fragment conditions. I added a \textit{please} to all materials from a token set whenever this made the utterances sound more natural.
 
@@ -503,7 +501,7 @@ Second, in some situations the use of fragments might be perceived as too inform
 %
 This suggests that the preference for sentences cannot be attributed to formality.
 
-Third, the average acceptability\is{Acceptability rating task} difference between fragments and sentences might be not due to surprisingly high ratings for sentences, but because some of the fragments were not the optimal encoding in the predictive condition. Recall that in order to control the form of fragments I always tested DP\is{Determiner phrase} fragments that appeared in the postverbal position in the full sentence. This ensured that materials were as similar as possible to each other in length and internal structure, but this type of fragments is not necessarily the most optimal one with respect to UID\is{Uniform Information Density}. As I observed in the introduction to this section, fragments can have different syntactic categories, or consist of a sequence thereof. Therefore, a wide range of fragments can be derived from a single sentence like \Next[a], some of which are given in \Next[b-d]. In the specific case of the pasta scenario, the DP\is{Determiner phrase} \Next[b] might be rather uninformative\is{Shannon information}, because cooking pasta involves various events that concern the pasta. Following UID\is{Uniform Information Density}, in this case, \textit{the pasta} might be omitted due to its predictability rather than the PP\is{Preposition phrase} in \Next[d], which would survive ellipsis because it is less predictable. If that was the case, at least some of the fragments tested in the experiment might not (only) be degraded because a sentence is preferred in the situation, but because there are other fragments that are more well-formed and can communicate the same message.
+Third, the average acceptability\is{Acceptability rating task} difference between fragments and sentences might be not due to surprisingly high ratings for sentences, but because some of the fragments were not the optimal encoding in the predictive condition. Recall that in order to control the form of fragments I always tested DP\is{Determiner phrase} fragments that appeared in the postverbal position in the full sentence. This ensured that materials were as similar as possible to each other in length and internal structure, but this type of fragments is not necessarily the most optimal one with respect to UID\is{Uniform Information Density}. As I observed in the introduction to this section, fragments can have different syntactic categories, or consist of a sequence thereof. Therefore, a wide range of fragments can be derived from a single sentence like \Next[a], some of which are given in \Next[b--d]. In the specific case of the pasta scenario, the DP\is{Determiner phrase} \Next[b] might be rather uninformative\is{Shannon information}, because cooking pasta involves various events that concern the pasta. Following UID\is{Uniform Information Density}, in this case, \textit{the pasta} might be omitted due to its predictability rather than the PP\is{Preposition phrase} in \Next[d], which would survive ellipsis because it is less predictable. If that was the case, at least some of the fragments tested in the experiment might not (only) be degraded because a sentence is preferred in the situation, but because there are other fragments that are more well-formed and can communicate the same message.
 
 \ex. \a. Pour the pasta into the pot, please!
 \b. The pasta!
@@ -786,10 +784,10 @@ This method cannot be applied as-is to fragments. For instance, given the discus
 
 \ex. The pasta!
 
-Therefore, I propose to extend \citeauthor{hale2001}'s method by allowing for an arbitrary number of omissions to occur before and after each word. Checking whether a parse is compatible with an input now does not require for the input to exactly match the parse, starting from its onset, but that the input could have been derived by ellipsis from the parse. For instance, the fragment in \Last can only be derived from \LLast[a] by omitting \texttt{pour} (and \texttt{pot.GOAL}, but this does not matter for estimating the surprisal\is{Shannon information} of \texttt{pasta}). Processing \texttt{pasta} thus excludes the parses in \LLast[b-d], which do not contain this expression. The surprisal\is{Shannon information} of \texttt{pasta} can then be calculated from the total probability mass of these parses by comparing the prefix probabilities as shown in Equation \ref{eq:pasta-s}:
+Therefore, I propose to extend \citeauthor{hale2001}'s method by allowing for an arbitrary number of omissions to occur before and after each word. Checking whether a parse is compatible with an input now does not require for the input to exactly match the parse, starting from its onset, but that the input could have been derived by ellipsis from the parse. For instance, the fragment in \Last can only be derived from \LLast[a] by omitting \texttt{pour} (and \texttt{pot.GOAL}, but this does not matter for estimating the surprisal\is{Shannon information} of \texttt{pasta}). Processing \texttt{pasta} thus excludes the parses in \LLast[b--d], which do not contain this expression. The surprisal\is{Shannon information} of \texttt{pasta} can then be calculated from the total probability mass of these parses by comparing the prefix probabilities as shown in Equation \ref{eq:pasta-s}:
 
 \begin{equation}
-S(pasta) = \log_2 \frac{1}{0.75} = 0.42 \label{eq:pasta-s}
+S(pasta) = \log_2 \left(\frac{1}{0.75}\right) = 0.42 \label{eq:pasta-s}
 \end{equation}
 
 This simple modification of \citeauthor{hale2001}'s approach allows in the same way to estimate the surprisal\is{Shannon information} of omitted and realized words in more complex discontinuous fragments. For instance, consider the case of a fragment like \Next, for which by-word surprisal\is{Shannon information} is to be estimated given the probability distribution in \ref{ex:contexts-pd}. The surprisal\is{Shannon information} of \texttt{pour} is calculated as described in the previous paragraph based on the exclusion of \LLast[c] only. The surprisal\is{Shannon information} of the omitted \texttt{pasta} in the context of \texttt{pour} is calculated just like described above for that of the realized word \texttt{pasta}. Note that for the purpose of surprisal\is{Shannon information} estimation it does not matter whether the target word itself has been omitted. This is desirable, since a word's surprisal must be independent from its own omission.
@@ -799,7 +797,7 @@ This simple modification of \citeauthor{hale2001}'s approach allows in the same 
 The surprisal\is{Shannon information} of \texttt{pot.GOAL} given \texttt{pour} is then equivalent to the probability mass of the parses that have not been excluded after processing \texttt{pour} but are so after processing \texttt{pot.GOAL}. Since only \Last[d] is excluded by \texttt{pot.GOAL}, this yields a surprisal\is{Shannon information} of 0.03 bits. Unlike it would in an \textit{n}-gram model\is{N-gram language model} trained on the enriched data set, the omitted word \texttt{pasta} does not contribute to the surprisal\is{Shannon information} of \texttt{pot.GOAL} in the example:
 
 \begin{equation}
-S(pot.GOAL\mathbin{|}pour) = \log_2 \frac{0.97}{0.95} = 0.03
+S(pot.GOAL\mathbin{|}pour) = \log_2 \left(\frac{0.97}{0.95}\right) = 0.03
 \end{equation}
 
 This method avoids the circularity issues related to training language models on elliptical data discussed above. On the one hand, since the complete structures from which the probabilities are derived do not contain omissions, a target word's surprisal\is{Shannon information} is not affect by the actual frequency of its omission. On the other hand, only words that have been actually produced are included in the context of the target word and can affect its probability. This avoids the concern that \textit{n}-gram models\is{N-gram language model} trained on the enriched data falsely include these words in the context. Like the approach by \citet{hale2001}, the approach is fully incremental, because processing effort\is{Processing effort}, i.e. surprisal\is{Shannon information}, arises exactly at the word that triggers the rejection of a parse. By allowing for omissions between words, my approach is similar to skip-gram models\is{Skip-gram language model} \citep{jans.etal2012}. However, unlike a skip-gram model, it does not skip a fixed number of words but take into account the possibility that words \textit{could} have been omitted. A further benefit is that this approach considers as much context as possible, unlike \textit{n}-gram models\is{N-gram language model}. The method presented here covers the complete context, that is, the contextual information about the point in the script\is{Script knowledge} at which the utterance occurs and all material that precedes this word within the utterance.
@@ -808,10 +806,10 @@ Although my method relies on the same reasoning as the approach in \citet{hale20
 %
 \footnote{I thank an anonymous CUNY 2020 reviewer for pointing this out.}\afterfn%
 %
-The reason for this is that in \citeauthor{hale2001}'s approach each parse contributes only to the probability mass of a single word within the set of words $w_i$ that might follow $w_{i-1}$. In order to account for the possibility that a word $w_{i}$ is omitted in the actually produced string, I take also words occurring later in the parse ($w_{i+n}, n \geqq 0$) into account in order to calculate $\alpha_i$. Therefore, a single parse can contribute to the probability mass of two or more words, so the sum of the probability mass of all words in context of $w_{i+1}$ becomes larger than 1. A possibility of dealing with this is to scale $\alpha_i$ by dividing it by the sum of the prefix probabilities of all words $W_{Alt}$ that could follow $w_{i-1}$, as shown in Equation \ref{eq:hale-s-alt}. Scaling ensures that all word probabilities sum to 1.
+The reason for this is that in \citeauthor{hale2001}'s approach each parse contributes only to the probability mass of a single word within the set of words $w_i$ that might follow $w_{i-1}$. In order to account for the possibility that a word $w_{i}$ is omitted in the actually produced string, I take also words occurring later in the parse ($w_{i+n}, n \geqq 0$) into account in order to calculate $\alpha_i$. Therefore, a single parse can contribute to the probability mass of two or more words, so the sum of the probability mass of all words in context of $w_{i+1}$ becomes larger than 1. A possibility of dealing with this is to scale $\alpha_i$ by dividing it by the sum of the prefix probabilities of all words $W_{Alt}$ that could follow $w_{i-1}$, as shown in Equation \ref{eq:hale-s-alt}. Scaling ensures that all word probabilities sum to 1.\largerpage
 
 \begin{equation}
-\displaystyle S_{scaled} = \log_2 \frac{\alpha_{i-1}}{\alpha_i \times \sum_{x\in W_{Alt}}{\alpha_x}} \label{eq:hale-s-alt}
+\displaystyle S_{scaled} = \log_2 \left(\frac{\alpha_{i-1}}{\alpha_i \times \sum_{x\in W_{Alt}}{\alpha_x}}\right) \label{eq:hale-s-alt}
 \end{equation}
 
 This equation returns a surprisal\is{Shannon information} estimate based on the likelihood of encountering a word at some point after $w_{i-1}$ in the utterance. In that sense, it is similar to unigram\is{Unigram language model} surprisal\is{Shannon information}, the main difference being that previous linguistic context\is{Context, linguistic} restricts the set based on which surprisal\is{Shannon information} is calculated. The problem with this approach however is that it does not model the work done by the parser\is{Parser, human} appropriately: In a situation where a target word is included in all parses, my approach sketched above assigns a surprisal\is{Shannon information} of 0 to this word, because processing it does not result in the exclusion of any of the parses. From a theoretical perspective, this is desirable, because it models proportionality between the work done by the parser\is{Parser, human} and surprisal\is{Shannon information} that underlies the approach in \citet{hale2001}. This property however is lost by scaling the ratio between the prefix probabilities before log-transformation, because if numerator and denominator in Equation \ref{eq:hale-s-alt} differ, the resulting surprisal\is{Shannon information} estimate will never be 0 (except for the rare case that $w_i$ is the only element in $W_{Alt}$). For this reason, I do not scale the prefix probabilities and follow the approach described above instead.
@@ -832,13 +830,13 @@ The approximations to surprisal\is{Shannon information} discussed so far are use
 Therefore, instead of using the surprisal\is{Shannon information} of $w_{i+1}$ as a predictor for the insertion of $w_i$, I quantify the effect of the insertion on processing by comparing the prefix probability after processing $w_{i+1}$ when $w_i$ has been inserted to the prefix probability at $w_{i+1}$ in case $w_i$ is omitted:
 
 \begin{equation} 
- \displaystyle Reduction(w_i, w_{i+1}) = \log_2 \frac{\alpha_{w_{i+i}}}{\alpha_{w_i, w_{i+1}}} \label{eq:sreduction}
+ \displaystyle Reduction(w_i, w_{i+1}) = \log_2 \left(\frac{\alpha_{w_{i+i}}}{\alpha_{w_i, w_{i+1}}}\right) \label{eq:sreduction}
 \end{equation}
 
 If the insertion of $w_i$ does not change the probability distribution after processing $w_{i+1}$, this will result in a reduction of 0. Surprisal\is{Shannon information} reduction is larger the more parses that are compatible with previous context and $w_{i+1}$ are excluded by the insertion of $w_i$. To illustrate how this formula is applied, consider again the omission of \texttt{pasta} in the utterance \texttt{pour} \texttt{pasta.NULL} \texttt{pot.GOAL} in \LLast. If \texttt{pasta} is inserted, only the parse in \ref{ex:contexts-a} is compatible with the input, whereas both \ref{ex:contexts-a} and \ref{ex:contexts-b} are when \texttt{pasta} is inserted. Equation \ref{eq:sreduction} can then be applied to estimate how much inserting \texttt{pasta} reduces the surprisal\is{Shannon information} of \texttt{pot.GOAL}.
 
 \begin{equation} 
- \displaystyle Reduction(pasta, pot.GOAL) = \log_2 \frac{0.97}{0.75} = 0.34
+ \displaystyle Reduction(pasta, pot.GOAL) = \log_2 \left(\frac{0.97}{0.75}\right) = 0.34
 \end{equation}
 
 In contrast to just using the surprisal\is{Shannon information} of $w_{i+1}$ as a predictor of the omission of $w_i$, this method quantifies \textit{how much} the insertion of $w_i$ reduces the surprisal\is{Shannon information} of $w_{i+1}$,  instead of just stipulating that it always does. Therefore, this measure will only predict insertion when this results in a reduction of information\is{Shannon information} on $w_{i+1}$, and not just because the $w_{i+1}$ is overall unpredictable. 
@@ -855,32 +853,29 @@ The final data set contained about 100 utterances for each of the 24 scripts\is{
 
 \subsubsection{Distribution of omissions across scripts}
 
-\begin{figure}[t]
+Figure \ref{fig:scripts-ellratio} shows that scripts differ with respect to the ratio of omitted grammatically required words. In the train script, 62.3\% of words were omitted, where\-as there are no omissions in the cooking scrambled eggs script\is{Script knowledge}. This variation is not trivial to the investigation of UID\is{Uniform Information Density} effects on omissions. On the one hand, a low ratio of omissions might reflect the inappropriateness of fragments in a scripts\is{Script knowledge}. If the usage of fragments were blocked for independent reasons, it would be reasonable to exclude the script from further analysis, because including them could mask effects of a word's information\is{Shannon information} on its omission. On the other hand, this variation could reflect UID\is{Uniform Information Density} effects on omission that should be taken into account by the statistical analysis. Two properties of the scripts that are highly relevant in this respect are lexicon size, i.e. the number of distinct words (the primitive units resulting from annotation) in the data for each script, and the entropy in the probability distribution over these words. The lexicon size varies to a large extent between scripts, for instance, in the train script\is{Script knowledge} there are only 12 different words, whereas there are 64 in the driving lesson script\is{Script knowledge}. Everything else being equal, a larger lexicon necessarily reduces the likelihood of an average word, therefore UID\is{Uniform Information Density} predicts a lower ratio of omissions in this case.
+
+\begin{figure}
  \includegraphics{figures/scr_production_omission_ratio}
  \caption{Ratio of omission across scripts.\label{fig:scripts-ellratio}}
 \end{figure}
-%
-Figure \ref{fig:scripts-ellratio} shows that scripts differ with respect to the ratio of omitted grammatically required words. In the train script, 62.3\% of words were omitted, whereas there are no omissions in the cooking scrambled eggs script\is{Script knowledge}. This variation is not trivial to the investigation of UID\is{Uniform Information Density} effects on omissions. On the one hand, a low ratio of omissions might reflect the inappropriateness of fragments in a scripts\is{Script knowledge}. If the usage of fragments were blocked for independent reasons, it would be reasonable to exclude the script from further analysis, because including them could mask effects of a word's information\is{Shannon information} on its omission. On the other hand, this variation could reflect UID\is{Uniform Information Density} effects on omission that should be taken into account by the statistical analysis. Two properties of the scripts that are highly relevant in this respect are lexicon size, i.e. the number of distinct words (the primitive units resulting from annotation) in the data for each script, and the entropy in the probability distribution over these words. The lexicon size varies to a large extent between scripts, for instance, in the train script\is{Script knowledge} there are only 12 different words, whereas there are 64 in the driving lesson script\is{Script knowledge}. Everything else being equal, a larger lexicon necessarily reduces the likelihood of an average word, therefore UID\is{Uniform Information Density} predicts a lower ratio of omissions in this case.
+
 
 Therefore, I first investigated whether the lexicon size has an effect on the ratio of omissions in these data. In order to account for different distributions over words I also investigated a potential effect of the \textit{entropy}\is{Entropy} in this probability distributions. The entropy\is{Entropy} $H$ of a random variable quantifies the degree of uncertainty about the outcome of this variable. Following \citet[393]{shannon1948}, entropy\is{Entropy} is defined as in Equation \ref{eq:entropy}. This measure is maximal if each outcome of the variable is equally likely and it equals 0 if there is only one possible outcome.
 
 \begin{equation}
- H\ =\ - K\ \sum_{i=1}^n\ p_i\ \log_2 \ p_i \label{eq:entropy}
+ H\ =\ - K\ \sum_{i=1}^n  p_i \log_2  (p_i) \label{eq:entropy}
 \end{equation}
 
 Entropy\is{Entropy} might be a better predictor than the lexicon size, because entropy\is{Entropy} also reflects the shape of the probability distribution over words. If this distribution is highly skewed for a script, because there are very few very probable words, a random word in this script\is{Script knowledge} will be on average more predictable than if the distribution is relatively flat. Since I expect that information\is{Shannon information} predicts omissions, the entropy\is{Entropy} in the distribution over possible words should also predict to the ratio of omissions, possibly even better than lexicon size. Figure \ref{fig:scripts-ellratio-lexicon} illustrates the effects of lexicon size and entropy\is{Entropy} on the ratio of omissions in a script\is{Script knowledge}. The plots suggest that both a larger lexicon and a higher entropy\is{Entropy} result in a lower ratio of fragments. As entropy\is{Entropy} increases with lexicon size, both are highly correlated \correlation{0.8}{6.3}{\highsig}. Linear regressions predicting fragment ratio from these factors individually show that both lexicon size \lm{1}{6.18}{0.05} and entropy\is{Entropy} \lm{1}{12.49}{0.01} have a significant effect on fragment ratio. A regression that tests both predictors at once reveals that raw vocabulary size has no significant effect beyond entropy\is{Entropy} \lmnonsig{1}{0.02}{0.8}. This suggests that the different ratios of omissions between scripts are at least in part due to properties of the data that are relevant to my research questions and not only due to independent properties of the script\is{Script knowledge}. For this reason, I did not exclude any scripts from the data set for further analysis.
 
-\begin{figure}[t]
-\hspace{-1em}\begin{minipage}{.48\textwidth}
+\begin{figure}
+\begin{minipage}{.5\textwidth}\centering
   \includegraphics{figures/scr_production_omission_ratio_lexicon}
-\end{minipage}
-\begin{minipage}{.03\textwidth}
- 
-\end{minipage}
-\begin{minipage}{.48\textwidth}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}\centering
   \includegraphics{figures/scr_production_omission_ratio_entropy}
 \end{minipage}
-
  \caption{Ratio of omission as a function of lexicon size and entropy in the script.\label{fig:scripts-ellratio-lexicon}}
 \end{figure}
 
@@ -899,7 +894,7 @@ Count & 74 & 680 &1238 & 414& 3\\
 \end{table}
 
 \begin{table}[t]
-\begin{tabular}{l l l l}
+\begin{tabular}{lccc}
 \lsptoprule
 Predictors & Pearson's $r^2$ & $t$ & $p$\\
 \midrule
@@ -919,8 +914,20 @@ The data were analyzed with logistic mixed effects regressions predicting the ou
 \subsubsubsection{Avoid troughs: Effects of surprisal on omissions}
 The density plots in Figures \ref{fig:production_density-unigram}\is{Unigram language model} and \ref{fig:production_density-context}  show the distribution of omissions across the range of \textsc{UnigramSurprisal}\is{Shannon information} and \textsc{ContextSurprisal}\is{Shannon information}. For both measures, the density plots suggest that on average the surprisal\is{Shannon information} of words which have originally been omitted is lower than that of realized words. The effect seems to be more pronounced for \textsc{UnigramSurprisal}\is{Shannon information}. 
 
-\begin{table}[t]
-\begin{tabular}{l l l l l l}
+\begin{figure}[p]
+  \includegraphics{figures/scr_production_density_unigram}
+   \caption{The density plot shows how the omitted and realized words are distributed across the unigram surprisal scale.\label{fig:production_density-unigram}}
+\end{figure}
+
+\begin{figure}[p]
+  \includegraphics{figures/scr_production_density_context}
+     \caption{The density plot shows how the omitted and realized words are distributed across the context-dependent surprisal scale.\label{fig:production_density-context}}
+\end{figure}
+
+The full model for unigram surprisal\is{Shannon information} contained only a main effect of \textsc{UnigramSurprisal} as well as by-subject and by-item (script) random intercepts and slopes for \textsc{UnigramSurprisal}. The by-subject effects account for individual preferences with respect to omission and the by-item effects for potential differences between scripts\is{Script knowledge}. The \textsc{UnigramSurprisal} main effect was significant \glmer{7.39}{0.01}: The lower the unigram surprisal\is{Shannon information} of a word is, the more likely it is to be omitted (see Table \ref{tab:production-unigram-estimates}). The full model for context-dependent surprisal\is{Shannon information} was identical to the one for unigram surprisal\is{Shannon information} except for the missing by-subject random slope for \textsc{ContextSurprisal}, because the model did not converge otherwise. The effect of \textsc{ContextSurprisal} was significant \glmer{4.86}{0.05} in the final model (see Table \ref{tab:production-context-estimates}).
+
+\begin{table}
+\begin{tabular}{l c c c c c}
 \lsptoprule
 Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\   
 \midrule
@@ -930,8 +937,8 @@ Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\
 \caption{Fixed effects in the final GLMM investigating the effect of \textsc{UnigramSurprisal} on \textsc{Omission}.\label{tab:production-unigram-estimates}}
 \end{table}
 
-\begin{table}[t]
-\begin{tabular}{l l l l l l}
+\begin{table}
+\begin{tabular}{l c c c c c}
 \lsptoprule
 Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\   
 \midrule
@@ -940,18 +947,6 @@ Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\
 \end{tabular}
 \caption{Fixed effects in the final GLMM investigating the effect of \textsc{ContextSurprisal} on \textsc{Omission}.\label{tab:production-context-estimates}}
 \end{table}
-
-The full model for unigram surprisal\is{Shannon information} contained only a main effect of \textsc{UnigramSurprisal} as well as by-subject and by-item (script) random intercepts and slopes for \textsc{UnigramSurprisal}. The by-subject effects account for individual preferences with respect to omission and the by-item effects for potential differences between scripts\is{Script knowledge}. The \textsc{UnigramSurprisal} main effect was significant \glmer{7.39}{0.01}: The lower the unigram surprisal\is{Shannon information} of a word is, the more likely it is to be omitted (see Table \ref{tab:production-unigram-estimates}). The full model for context-dependent surprisal\is{Shannon information} was identical to the one for unigram surprisal\is{Shannon information} except for the missing by-subject random slope for \textsc{ContextSurprisal}, because the model did not converge otherwise. The effect of \textsc{ContextSurprisal} was significant \glmer{4.86}{0.05} in the final model (see Table \ref{tab:production-context-estimates}).
-
-\begin{figure}[t]
-  \includegraphics{figures/scr_production_density_unigram}
-   \caption{The density plot shows how the omitted and realized words are distributed across the unigram surprisal scale.\label{fig:production_density-unigram}}
-\end{figure}
-
-\begin{figure}[t]
-  \includegraphics{figures/scr_production_density_context}
-     \caption{The density plot shows how the omitted and realized words are distributed across the context-dependent surprisal scale.\label{fig:production_density-context}}
-\end{figure}
 
 Taken together, both unigram\is{Unigram language model} and context dependent surprisal\is{Shannon information} predict omissions: Words that are more predictable are more likely to be omitted. This is in line with the prediction of UID\is{Uniform Information Density} that omitting predictable words in order to avoid troughs in the density profile. A somewhat unexpected finding is that \textsc{UnigramSurprisal} seems to be a better predictor of omission than \textsc{ContextSurprisal}. In principle the opposite would be expected, because \textsc{ContextSurprisal} takes more sources of predictability\is{Context, linguistic} into account and should therefore be a more precise measure of predictability. In part, the stronger effect of \textsc{UnigramSurprisal} is probably an artifact of the data set. As the density plot in Figure \ref{fig:production_density-context} shows, the overall distribution of \textsc{ContextSurprisal} is more heavily skewed due to many words having a \textsc{ContextSurprisal} of 0. This results from the relatively small number of complete structures in my data: Sometimes one or two words suffice to completely disambiguate between the structures, so that all following words are fully redundant. An actual speaker however might have a larger set of possible utterances in mind, so that they are not as completely redundant as my model suggests. Therefore, I expect that \textsc{ContextSurprisal} would be a better predictor of \textsc{Omission} if the same procedure is applied to a larger and more diverse data set.
 
@@ -1096,7 +1091,7 @@ For scalar implicatures, \citet{franke2009} focuses on the interpretation of the
 
 \citet[59--61]{franke2009} models this situation with a reference game, whose parameters are given in Table \ref{tab:gt-si}. In the game there are only two possible meanings, $m_{\exists\neg\forall}$ and  $m_{\forall}$, two corresponding interpretation actions $a_{\exists\neg\forall}$ and  $a_{\forall}$ and two possible utterances, $u_{some}$ and $u_{all}$. The two utterances correspond to \Last[a,c] respectively. Whereas $u_{some}$ is true in case of both messages, $u_{all}$ is false if $m_{\exists\neg\forall}$ is true. Therefore, $u_{all}$ may be selected only if that the speaker wants to communicate that all students completed the assignment. Each of the messages has a prior probability $Pr(m)$. As I noted above, under the assumption that both agents pursue the goal of successful communication, the payoffs for speaker and hearer are matched: Both receive a payoff of 1 if the interpretation action corresponds to the intended message and no payoff if it does not.
      
-\begin{table}[t]
+\begin{table}
  \begin{tabular}{l c c c c c c}
  \lsptoprule
   & Pr(m) & $a_{\exists\neg\forall}$ & $a_{\forall}$ & $u_{some}$ & $u_{all}$\\
@@ -1123,7 +1118,13 @@ The literal hearer calculates the posterior probability of each message to be in
 %
 This yields the interpretation strategies in Table \ref{tab:gt-si-l0}: $u_{some}$ will be interpreted either as $m_{\exists\neg\forall}$ or $m_{\forall}$, whereas $u_{all}$ will be always interpreted as $m_{\forall}$:
 
-\begin{table}[t]
+\begin{equation}\label{eq:l0}
+ L_0 = \begin{Bmatrix} u_{some} \mapsto m_{\exists\neg\forall},m_{\forall}   \\
+        u_{all} \mapsto m_{\forall}\\
+       \end{Bmatrix}
+\end{equation}
+
+\begin{table}
 \begin{tabular}{c c c}
  \lsptoprule
  $\mu_0(m|u)$ & $m_{\exists\neg\forall}$ & $m_{\forall}$\\
@@ -1134,13 +1135,6 @@ $u_{all}$ & 0 & 1\\
 \end{tabular}
 \caption{Posterior probabilities for the literal hearer $L_0$.\label{tab:gt-si-l0}}
 \end{table}
-%
-%
-\begin{equation}\label{eq:l0}
- L_0 = \begin{Bmatrix} u_{some} \mapsto m_{\exists\neg\forall},m_{\forall}   \\
-        u_{all} \mapsto m_{\forall}\\
-       \end{Bmatrix}
-\end{equation}
 
 The pragmatic speaker takes into account these interpretation strategies of the literal hearer. Since the hearer will unambiguously interpret $u_{all}$ as $m_{\forall}$ but might understand $u_{some}$ as either of the messages, $u_{all}$ has a higher \textit{utility} than $u_{some}$ to communicate $m_{\forall}$. In order to communicate $m_{\exists\neg\forall}$ the utility of $u_{all}$ is 0. Even though a literal hearer might interpret $u_{some}$ as $m_{\forall}$ half of the time, $u_{some}$ is the more promising option for the speaker to get the message across. This results in the following strategies:
 
@@ -1161,18 +1155,6 @@ This measure increases the higher the prior probability of $m$ is and the more l
 \footnote{For a more detailed discussion of the formula see \citep[26--27]{franke2009} and for the application to scalar implicatures \citep[60]{franke2009}.}\afterfn%
 %
 
-\begin{table}[t]
-\begin{tabular}{c c c}
- \lsptoprule
- $\mu_0(m|u)$ & $m_{\exists\neg\forall}$ & $m_{\forall}$\\
-\midrule
-$u_{some}$ & ⅔ & ⅓ \\
-$u_{all}$ & 0 & 1\\
-\lspbottomrule
-\end{tabular}
-\caption{Posterior probabilities for the pragmatic hearer $L_1$.\label{tab:gt-si-l1}}
-\end{table}
-
 \begin{equation}
 L_1 = \begin{Bmatrix} u_{some} \mapsto m_{\exists\neg\forall} \\
         u_{all} \mapsto m_{\forall}\\
@@ -1184,6 +1166,18 @@ This model is of course highly simplified because it avoids further alternative 
 \footnote{Effects of a \textit{some but not all} message are discussed by \citet[77, 127]{franke2009}.}\afterfn%
 %
 Still though, it can model scalar implicatures both on the side of the hearer and on that of the hearer after only one recursive iteration step. The strategies of $L_1$ or $S_1$ can also be the input to higher order reasoning processes.\is{Iterated Best Response model|)}\is{Game theory|)}
+
+\begin{table}
+\begin{tabular}{c c c}
+ \lsptoprule
+ $\mu_0(m|u)$ & $m_{\exists\neg\forall}$ & $m_{\forall}$\\
+\midrule
+$u_{some}$ & ⅔ & ⅓ \\
+$u_{all}$ & 0 & 1\\
+\lspbottomrule
+\end{tabular}
+\caption{Posterior probabilities for the pragmatic hearer $L_1$.\label{tab:gt-si-l1}}
+\end{table}
 
 \subsection{Application to fragments}
 The case of fragments is often more complex than the (simplified) scalar implicature example discussed above. However, the underlying situation is similar, even though the set of messages and utterances is considerably larger: There is a set of possible messages that the speaker might want to communicate to the hearer and a set of utterances that she can use for this purpose. The sets of possible messages and utterances are potentially extremely large (if not infinite, due to recursion in language), but in situations that are constrained by script knowledge\is{Script knowledge} (like in the data from experiment \ref{exp:scripts-production}), the set of actually considered alternative messages and utterances is often relatively limited.  Consider a simplified version of the pasta scenario which I used to illustrate the surprisal calculation methods in Section \ref{sec:scripts-production-surprisal}. In this version of the scenario there are only two messages with differing prior probabilities, which are given in \Next. Again, I use the representations that resulted from preprocessing the production data\is{Production task} collected with experiment \ref{exp:scripts-production}. Each message $m_i$ has is associated a (hypothetical) prior probability $Pr(m_i)$.
@@ -1203,7 +1197,7 @@ Under the assumption that each ``word'' in these utterances can be omitted indep
 
 Even in this highly simplified scenario with only two messages that differ only in one word, there are 11 possible utterances. The combination with the two messages in \Last yields the tableau in Table \ref{tab:gt-fragments-truth}, based on which the same reasoning steps like in the scalar implicature example can be performed. If more meanings were considered, the complexity of the tableau would increase, but the problem remains identical.
 
-\begin{table}[t]
+\begin{table}
 \begin{tabular}{l l p{.34cm} p{.34cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm} p{.21cm}}
 \lsptoprule
 Message & Pr(m) & \rotatebox{90}{$a_{pour \mathspace pasta \mathspace pot}$} & \rotatebox{90}{$a_{pour \mathspace salt \mathspace pot}$} & \rotatebox{90}{\texttt{pour pasta pot}} & \rotatebox{90}{\texttt{pour salt pot}} & \rotatebox{90}{\texttt{pour pasta}} & \rotatebox{90}{\texttt{pour pot}} & \rotatebox{90}{\texttt{pour salt}} & \rotatebox{90}{\texttt{pasta pot}} & \rotatebox{90}{\texttt{salt pot}} & \rotatebox{90}{\texttt{pour}} & \rotatebox{90}{\texttt{pasta}} & \rotatebox{90}{\texttt{pot}} & \rotatebox{90}{\texttt{salt}}\\
