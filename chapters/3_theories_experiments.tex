@@ -166,8 +166,9 @@ This is implemented by threshold parameters that quantify this distance between 
 In order to determine the most appropriate model for the data, I used a backward model selection procedure. I started with a full model, which contains all predictors and two-way interactions between them and subsequently excluded effects that do not significantly improve model fit, as evidenced by likelihood ratio tests calculated with the \texttt{anova} function. Following \citet{barr.etal2013}, as long as models converged, I included the full random effects structure, i.e. by-subject and by-item random intercepts as well as by-subject and by-item random slopes for all predictors. $p$-values were calculated with likelihood ratio tests comparing the model fit of the final model to that of models without the specific predictor with the \texttt{anova} function in \texttt{R}. Besides explicitly stated differences, all statistical analysis reported in this work follow this procedure.
 
 \subsubsection{Results}\label{sec:fragments-case-rating-results}
-
-Figure \ref{fig:case-estimates} shows the mean acceptability ratings\is{Acceptability rating task} across the \textsc{Case} conditions and the \textsc{XPlease} variation between token sets. Accusative\is{Accusative case} fragments \descriptives{4.26}{2.09} were rated\is{Acceptability rating task} as more acceptable than nominative\is{Nominative case} fragments \descriptives{3.64}{2.08}. Fragments that could be paraphrased by a \textsc{XPlease} construction described above ($n = 4$) were rated\is{Acceptability rating task} as more acceptable \descriptives{5.16}{1.77} than those that could not \descriptives{3.65}{2.07}. The mean ratings suggest that the preference for accusative\is{Accusative case} is independent from the possible \textsc{XPlease} construction.
+\begin{sloppypar}
+Figure \ref{fig:case-estimates} shows the mean acceptability ratings\is{Acceptability rating task} across the \textsc{Case} conditions and the \textsc{XPlease} variation between token sets. Accusative\is{Accusative case} fragments (${\mu=4.26},\allowbreak {\sigma=2.09}$) were rated\is{Acceptability rating task} as more acceptable than nominative\is{Nominative case} fragments (${\mu=3.64},\allowbreak{\sigma=2.08}$). Fragments that could be paraphrased by a \textsc{XPlease} construction described above ($n = 4$) were rated\is{Acceptability rating task} as more acceptable \descriptives{5.16}{1.77} than those that could not \descriptives{3.65}{2.07}. The mean ratings suggest that the preference for accusative\is{Accusative case} is independent from the possible \textsc{XPlease} construction.
+\end{sloppypar}
 
 \begin{figure}
 \includegraphics[width=10cm]{figures/ex1_case_estimates}
@@ -330,7 +331,7 @@ In both cases, in the corresponding full sentence \Next with default word order\
 \ex. \ag. Nimm  den Topf mit den Nudeln vom Herd.\\
 	  take.\textsc{imp} the.\textsc{acc} pot with the.\textsc{acc} pasta off-the.\textsc{dat} stove\\
 	  \trans{Take the pot with the pasta off the stove.}
-     \bg. Deck doch schon nmal den Küchentisch.\\
+     \bg. Deck doch schon mal den Küchentisch.\\
 	  set.\textsc{imp} already \textsc{prt} already the.\textsc{acc} kitchen.table\\
 	  \trans{Set the kitchen table, please.}
 

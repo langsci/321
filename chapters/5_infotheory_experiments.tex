@@ -206,7 +206,7 @@ Based on \citepos{schank.abelson1977} theory, it seems natural to assume that \L
 \subsubsection{Scripts as probabilistic event chains}
 \is{Event chain|(}The script\is{Script knowledge} representations underlying the materials for experiments \ref{exp:scripts-rating} and \ref{exp:scripts-production} model scripts\is{Script knowledge} as probabilistic networks rather than as linear event sequences, as most of the previous work on scripts\is{Script knowledge} did. In such a network, each event is assigned a state $e_i$ which has a transition probability to another state $e_j$. The transition probability $p(e_j\mathbin{|}e_i)$ indicates the likelihood of $e_j$ to follow $e_i$ and can be estimated for each pair of states $\langle e_i,e_j\rangle$ {}in the total set of states that is determined by the script\is{Script knowledge}. The transition probabilities can range from 0, i.e. $e_j$ never follows $e_i$, to 1 in case $e_j$ always follows $e_i$. Figure \ref{fig:script-abstract} shows a part the abstract representation of the pasta scenario. Based on the transition probabilities it is possible to extract a linear sequence of the most likely events to follow each other even though the underlying structure itself is nonlinear. For instance, the four events marked in grey in Figure \ref{fig:script-abstract} were used to build the item for the pasta scenario given in \ref{ex:scripts-item-abstract}.\is{Event chain|)}
 
-\begin{figure}[t]
+\begin{figure}
   \begin{tikzpicture}[scale=.9]
 {\small
 \fill [black!10!] (0,0) circle [radius=.7];
@@ -277,7 +277,7 @@ To some extent, this diversity is a property inherent to script knowledge\is{Scr
 \d. Add a bit of milk
 \e. Start cooking eggs
 
-\begin{figure}[t]
+\begin{figure}
  \begin{tikzpicture}[scale=1]
 
  \draw [draw = black!20!, line width = .5mm] (0,-.3) rectangle (12,-2.5);
@@ -448,14 +448,14 @@ In the instructions for this questionnaire, familiarity was defined as ``knowing
 \subsection{Results}
 Figure \ref{fig:scripts-rating-means} summarizes the aggregated rating data by condition. The data were analyzed with CLMMs following the procedure described in Section \ref{sec:intro-stats}. The full model contained main effects of \textsc{Sententiality}, \textsc{Predictability}, \textsc{ScriptType} (situational/instrumental), the \textsc{Position} of the item in the experiment, and the z-transformed \textsc{ScriptKnowledge} score from the questionnaire that followed the main experiment. I also included all two-way interactions and the three-way interaction between \textsc{Sententiality}, \textsc{Predictability} and \textsc{ScriptKnowledge}. The three-way interaction could show whe\-ther the \textsc{Sententiali\-ty:Predicta\-bility} interaction predicted by information theory\is{Information theory} is stronger the more familiar subjects are with the scenario. The model contained by-item random intercepts and slopes for \textsc{Sententiality}, \textsc{Predictability} and \textsc{ScriptKnow\-ledge} and by-subject random intercepts and slopes for these predictors and all interactions between them, including the three-way interaction. Backward model selection maintaining only those effects significantly improving model fit, as evidenced by likelihood ratio tests, yielded the final model summarized in Table \ref{tab:scripts-rating-estimates}. 
 
-\begin{figure}[t]
+\begin{figure}
 \includegraphics[scale=1]{figures/scr_rating_estimates}
  \caption{Mean ratings $+$ 95\% CIs for experiment \ref{exp:scripts-rating}. \label{fig:scripts-rating-means}}
 \end{figure}
 
 The final model contains significant main effects for both experimentally manipulated IVs. The main effect of \textsc{Sententiality} \clmmLR{30.05}{\highsig} reveals a general preference for sentences over fragments, and the main effect of \textsc{Predictability} \clmmLR{10.49}{0.01} shows that predictable utterances are also preferred overall. The significant interaction \clmmLR{9.61}{0.01} between both predictors confirms the prediction of UID\is{Uniform Information Density} that the relative preference for sentences is weaker in the predictable condition: Fragments are more acceptable when they refer to a predictable event. \textsc{ScriptKnowledge} does not seem to constrain this interaction given the model, as the three-way interaction was not significant \clmmLRnonsig{2.36}{0.1}. There is also no significant main effect of \textsc{ScriptKnowledge} \clmmLRnonsig{0.03}{0.8}, but a significant interaction with \textsc{Predictability} \clmmLR{5.08}{0.05}: The more people know about a scenario, the more they distinguish between the predictable and unpredictable conditions. The absence of any significant effect of \textsc{ScriptType} or interaction with other predictors suggests that the situational and adapted instrumental scripts\is{Script knowledge} trigger equally strong predictability effects. Finally, there is a theoretically uninteresting \textsc{Position} main effect that however does not interact with any of the other predictors and shows that ratings improve in the course of the experiment.
 
-\begin{table}[t]
+\begin{table}
 \centering
 \caption{Fixed effects in the final CLMM. \label{tab:scripts-rating-estimates}}
 \begin{tabular}{p{3.4cm}lllll}
@@ -578,7 +578,7 @@ The diversity in the production data\is{Production task} results in two problems
 \footnote{Higher order \textit{n}-grams\is{N-gram language model} boost this problem further. For instance, only two synonym verbs \textit{reingeben}, \textit{reintun} (`to put inside') and two synonym words for the pasta split the probability mass of \textit{pour pasta} across four bigrams\is{Bigram language model}.}\afterfn%
 %
 
-\begin{figure}[t]
+\begin{figure}
 \begin{tikzpicture}[scale=1]
 \draw [draw = black!20!, line width = .5mm] (0,-.9) rectangle (12,-2.2);
 \node (t) at (2.026,-1.16) [fill = black!20!, inner sep = 3pt] {Original production data};
@@ -882,7 +882,7 @@ Entropy\is{Entropy} might be a better predictor than the lexicon size, because e
 \subsubsection{Variables}
 The regression analyses described in what follows investigate effects of the three information-theoretic\is{Information theory} predictors described in the preceding section on the omission of words. \textsc{UnigramSurprisal} models the likelihood of words given extralinguistic context\is{Context, extralinguistic}, \textsc{ContextSurprisal}\is{Shannon information} additionally takes linguistic context\is{Context, linguistic} into account, and \textsc{SurprisalReduction} quantifies how much inserting a word reduces the surprisal\is{Shannon information} of the following one. Additionally, I annotated the position of the word in the utterance (numeric). As I discussed in Section \ref{sec:infotheory-uid}, in the literature there is evidence for optimization of word order\is{Word order} with respect to UID\is{Uniform Information Density}. On average, context\is{Context, linguistic} reduces the information\is{Shannon information} of words, therefore placing more informative\is{Shannon information} words toward the end of the utterance yields a more uniform ID profile\is{Information density}. In Section \ref{sec:scripts-production-results-uniformity}, I show that this prediction is borne out. Table \ref{tab:production-length} provides an overview of the distribution of utterance lengths. All preprocessed utterances had a length between one and five words. As there were only three utterances with a length of five and I analyzed utterance lengths with an ordinal model these three utterances were excluded from further analyses due to data sparseness.
 
-\begin{table}[t]
+\begin{table}
 \begin{tabular}{l *{5}{c}}
 \lsptoprule
 Length (words) & 1 & 2 & 3 & 4 & 5\\
@@ -893,7 +893,7 @@ Count & 74 & 680 &1238 & 414& 3\\
 \caption{Distribution of utterances by length in the production data.\label{tab:production-length}}
 \end{table}
 
-\begin{table}[t]
+\begin{table}
 \begin{tabular}{lccc}
 \lsptoprule
 Surprisal predictors & Pearson's $r^2$ & $t$ & $p$\\
