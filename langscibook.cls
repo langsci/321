@@ -1465,6 +1465,7 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 	%refsection=chapter,
 	maxbibnames=99,
 	uniquename=false,
+	uniquelist=false,
 	mincrossrefs=99,
 	maxcitenames=2,
 	isbn=false,
