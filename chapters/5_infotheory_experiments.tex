@@ -830,13 +830,13 @@ The approximations to surprisal\is{Shannon information} discussed so far are use
 Therefore, instead of using the surprisal\is{Shannon information} of $w_{i+1}$ as a predictor for the insertion of $w_i$, I quantify the effect of the insertion on processing by comparing the prefix probability after processing $w_{i+1}$ when $w_i$ has been inserted to the prefix probability at $w_{i+1}$ in case $w_i$ is omitted:
 
 \begin{equation} 
- \displaystyle Reduction(w_i, w_{i+1}) = \log_2 \frac{\alpha_{w_{i+i}}}{\alpha_{w_i, w_{i+1}}} \label{eq:sreduction}
+ \displaystyle \text{Reduction}(w_i, w_{i+1}) = \log_2 \frac{\alpha_{w_{i+i}}}{\alpha_{w_i, w_{i+1}}} \label{eq:sreduction}
 \end{equation}
 
 If the insertion of $w_i$ does not change the probability distribution after processing $w_{i+1}$, this will result in a reduction of 0. Surprisal\is{Shannon information} reduction is larger the more parses that are compatible with previous context and $w_{i+1}$ are excluded by the insertion of $w_i$. To illustrate how this formula is applied, consider again the omission of \texttt{pasta} in the utterance \texttt{pour} \texttt{pasta.NULL} \texttt{pot.GOAL} in \LLast. If \texttt{pasta} is inserted, only the parse in \ref{ex:contexts-a} is compatible with the input, whereas both \ref{ex:contexts-a} and \ref{ex:contexts-b} are when \texttt{pasta} is inserted. Equation \ref{eq:sreduction} can then be applied to estimate how much inserting \texttt{pasta} reduces the surprisal\is{Shannon information} of \texttt{pot.GOAL}.
 
 \begin{equation} 
- \displaystyle Reduction(pasta, pot.GOAL) = \log_2 \frac{0.97}{0.75} = 0.34
+ \displaystyle \text{Reduction}(\textit{pasta}, \textit{pot.GOAL}) = \log_2 \frac{0.97}{0.75} = 0.34
 \end{equation}
 
 In contrast to just using the surprisal\is{Shannon information} of $w_{i+1}$ as a predictor of the omission of $w_i$, this method quantifies \textit{how much} the insertion of $w_i$ reduces the surprisal\is{Shannon information} of $w_{i+1}$,  instead of just stipulating that it always does. Therefore, this measure will only predict insertion when this results in a reduction of information\is{Shannon information} on $w_{i+1}$, and not just because the $w_{i+1}$ is overall unpredictable. 
@@ -926,7 +926,8 @@ The density plots in Figures \ref{fig:production_density-unigram}\is{Unigram lan
 
 The full model for unigram surprisal\is{Shannon information} contained only a main effect of \textsc{UnigramSurprisal} as well as by-subject and by-item (script) random intercepts and slopes for \textsc{UnigramSurprisal}. The by-subject effects account for individual preferences with respect to omission and the by-item effects for potential differences between scripts\is{Script knowledge}. The \textsc{UnigramSurprisal} main effect was significant \glmer{7.39}{0.01}: The lower the unigram surprisal\is{Shannon information} of a word is, the more likely it is to be omitted (see Table \ref{tab:production-unigram-estimates}). The full model for context-dependent surprisal\is{Shannon information} was identical to the one for unigram surprisal\is{Shannon information} except for the missing by-subject random slope for \textsc{ContextSurprisal}, because the model did not converge otherwise. The effect of \textsc{ContextSurprisal} was significant \glmer{4.86}{0.05} in the final model (see Table \ref{tab:production-context-estimates}).
 
-\begin{table}
+\vfill
+\begin{table}[H]
 \begin{tabular}{l c c c c c}
 \lsptoprule
 Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\   
@@ -936,8 +937,8 @@ Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\
 \end{tabular}
 \caption{Fixed effects in the final GLMM investigating the effect of \textsc{UnigramSurprisal} on \textsc{Omission}.\label{tab:production-unigram-estimates}}
 \end{table}
-
-\begin{table}
+\vfill
+\begin{table}[H]
 \begin{tabular}{l c c c c c}
 \lsptoprule
 Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\   
@@ -946,7 +947,7 @@ Predictor & Estimate & SE & $\chi^2$ &  $p$ &  \\
 \lspbottomrule
 \end{tabular}
 \caption{Fixed effects in the final GLMM investigating the effect of \textsc{ContextSurprisal} on \textsc{Omission}.\label{tab:production-context-estimates}}
-\end{table}
+\end{table}\vfill\pagebreak
 
 Taken together, both unigram\is{Unigram language model} and context dependent surprisal\is{Shannon information} predict omissions: Words that are more predictable are more likely to be omitted. This is in line with the prediction of UID\is{Uniform Information Density} that omitting predictable words in order to avoid troughs in the density profile. A somewhat unexpected finding is that \textsc{UnigramSurprisal} seems to be a better predictor of omission than \textsc{ContextSurprisal}. In principle the opposite would be expected, because \textsc{ContextSurprisal} takes more sources of predictability\is{Context, linguistic} into account and should therefore be a more precise measure of predictability. In part, the stronger effect of \textsc{UnigramSurprisal} is probably an artifact of the data set. As the density plot in Figure \ref{fig:production_density-context} shows, the overall distribution of \textsc{ContextSurprisal} is more heavily skewed due to many words having a \textsc{ContextSurprisal} of 0. This results from the relatively small number of complete structures in my data: Sometimes one or two words suffice to completely disambiguate between the structures, so that all following words are fully redundant. An actual speaker however might have a larger set of possible utterances in mind, so that they are not as completely redundant as my model suggests. Therefore, I expect that \textsc{ContextSurprisal} would be a better predictor of \textsc{Omission} if the same procedure is applied to a larger and more diverse data set.
 
@@ -1089,12 +1090,12 @@ For scalar implicatures, \citet{franke2009} focuses on the interpretation of the
      \b. Some but not all of the students completed the assignment.
      \c. All of the students completed the assignment.
 
-\citet[59--61]{franke2009} models this situation with a reference game, whose parameters are given in Table \ref{tab:gt-si}. In the game there are only two possible meanings, $m_{\exists\neg\forall}$ and  $m_{\forall}$, two corresponding interpretation actions $a_{\exists\neg\forall}$ and  $a_{\forall}$ and two possible utterances, $u_{some}$ and $u_{all}$. The two utterances correspond to \Last[a,c] respectively. Whereas $u_{some}$ is true in case of both messages, $u_{all}$ is false if $m_{\exists\neg\forall}$ is true. Therefore, $u_{all}$ may be selected only if that the speaker wants to communicate that all students completed the assignment. Each of the messages has a prior probability $Pr(m)$. As I noted above, under the assumption that both agents pursue the goal of successful communication, the payoffs for speaker and hearer are matched: Both receive a payoff of 1 if the interpretation action corresponds to the intended message and no payoff if it does not.
+\citet[59--61]{franke2009} models this situation with a reference game, whose parameters are given in Table \ref{tab:gt-si}. In the game there are only two possible meanings, $m_{\exists\neg\forall}$ and  $m_{\forall}$, two corresponding interpretation actions $a_{\exists\neg\forall}$ and  $a_{\forall}$ and two possible utterances, $u_{\textit{some}}$ and $u_{\textit{all}}$. The two utterances correspond to \Last[a,c] respectively. Whereas $u_{\textit{some}}$ is true in case of both messages, $u_{\textit{all}}$ is false if $m_{\exists\neg\forall}$ is true. Therefore, $u_{\textit{all}}$ may be selected only if that the speaker wants to communicate that all students completed the assignment. Each of the messages has a prior probability $Pr(m)$. As I noted above, under the assumption that both agents pursue the goal of successful communication, the payoffs for speaker and hearer are matched: Both receive a payoff of 1 if the interpretation action corresponds to the intended message and no payoff if it does not.
      
 \begin{table}
  \begin{tabular}{l c c c c c c}
  \lsptoprule
-  & Pr(m) & $a_{\exists\neg\forall}$ & $a_{\forall}$ & $u_{some}$ & $u_{all}$\\
+  & Pr(m) & $a_{\exists\neg\forall}$ & $a_{\forall}$ & $u_{\textit{some}}$ & $u_{\textit{all}}$\\
   \midrule
  $m_{\exists\neg\forall}$ & 1 -- p & 1,1 & 0,0 & \ding{51} & -- \\
   $m_{\forall}$ & p & 0,0 & 1,1 & \ding{51} & \ding{51} \\
@@ -1103,24 +1104,24 @@ For scalar implicatures, \citet{franke2009} focuses on the interpretation of the
  \caption{Tableau for the scalar implicature game, adapted from \citet[21]{franke2009}. The table provides the probability $Pr(m)$ for each message, the speaker and hearer payoffs for each combination of messages and interpretation actions and determines which utterance can be used to communicate each message.\label{tab:gt-si}}
  \end{table}
  
-Based on this setting, two chains of iterative reasoning of the agents about each other's behavior are initialized. One of these chains starts with a \textit{literal} speaker and the other one with a literal hearer. Unlike higher order \textit{pragmatic} agents, literal agents take only the general setup of the model into account but do not reason about the other agent's behavior. The literal speaker selects randomly an utterance that is true. In order to communicate $m_{\exists\neg\forall}$, the only available utterance is $u_{some}$, because $u_{all}$ is false in this situation. In contrast, $m_{\forall}$ can be communicated with both utterances, because both are true for this message. This yields the following \textit{strategies}:
+Based on this setting, two chains of iterative reasoning of the agents about each other's behavior are initialized. One of these chains starts with a \textit{literal} speaker and the other one with a literal hearer. Unlike higher order \textit{pragmatic} agents, literal agents take only the general setup of the model into account but do not reason about the other agent's behavior. The literal speaker selects randomly an utterance that is true. In order to communicate $m_{\exists\neg\forall}$, the only available utterance is $u_{\textit{some}}$, because $u_{\textit{all}}$ is false in this situation. In contrast, $m_{\forall}$ can be communicated with both utterances, because both are true for this message. This yields the following \textit{strategies}:
 
 
 \begin{equation}
-S_0 = \begin{Bmatrix} t_{\exists\neg\forall} \mapsto m_{some}\\
-        t_{\forall} \mapsto m_{some}, m_{all}\\
+S_0 = \begin{Bmatrix} t_{\exists\neg\forall} \mapsto m_{\textit{some}}\\
+        t_{\forall} \mapsto m_{\textit{some}}, m_{\textit{all}}\\
        \end{Bmatrix}
 \end{equation}
 
-The literal hearer calculates the posterior probability of each message to be intended by the speaker given each of the available utterances. The listener does not reason about the speaker's behavior and considers only the prior probability of each message and the truth conditions. In the first sketch of his approach, \citet{franke2009} uses flat priors ($p = 0.5$). Table \ref{tab:gt-si-l0} summarizes the posterior probabilities for the scalar implicature game. If the hearer encounters $u_{all}$, the posterior probability of $\mu(m_{\exists\neg\forall}|u_{all})$ equals 0, because the utterance would be false in case of the message. Therefore, $\mu(m_{\forall}|u_{all}) = 1$, because this is the only message for which $u_{all}$ is true. If the hearer encounters $u_{some}$, both messages could be true, so he will go for the most likely one in order to maximize the likelihood of figuring out the intended meaning. Since both messages are equally likely in case of flat priors, assigning an interpretation to the utterance consists in random guessing.%
+The literal hearer calculates the posterior probability of each message to be intended by the speaker given each of the available utterances. The listener does not reason about the speaker's behavior and considers only the prior probability of each message and the truth conditions. In the first sketch of his approach, \citet{franke2009} uses flat priors ($p = 0.5$). Table \ref{tab:gt-si-l0} summarizes the posterior probabilities for the scalar implicature game. If the hearer encounters $u_{\textit{all}}$, the posterior probability of $\mu(m_{\exists\neg\forall}|u_{\textit{all}})$ equals 0, because the utterance would be false in case of the message. Therefore, $\mu(m_{\forall}|u_{\textit{all}}) = 1$, because this is the only message for which $u_{\textit{all}}$ is true. If the hearer encounters $u_{\textit{some}}$, both messages could be true, so he will go for the most likely one in order to maximize the likelihood of figuring out the intended meaning. Since both messages are equally likely in case of flat priors, assigning an interpretation to the utterance consists in random guessing.%
 %
 \footnote{However, if $m_{\exists\neg\forall}$ is more likely than $m_{\forall}$ (if $p > 0.5$), assuming that the more likely message was intended increases the probability of success.}\afterfn%
 %
-This yields the interpretation strategies in Table \ref{tab:gt-si-l0}: $u_{some}$ will be interpreted either as $m_{\exists\neg\forall}$ or $m_{\forall}$, whereas $u_{all}$ will be always interpreted as $m_{\forall}$:
+This yields the interpretation strategies in Table \ref{tab:gt-si-l0}: $u_{\textit{some}}$ will be interpreted either as $m_{\exists\neg\forall}$ or $m_{\forall}$, whereas $u_{\textit{all}}$ will be always interpreted as $m_{\forall}$:
 
 \begin{equation}\label{eq:l0}
- L_0 = \begin{Bmatrix} u_{some} \mapsto m_{\exists\neg\forall},m_{\forall}   \\
-        u_{all} \mapsto m_{\forall}\\
+ L_0 = \begin{Bmatrix} u_{\textit{some}} \mapsto m_{\exists\neg\forall},m_{\forall}   \\
+        u_{\textit{all}} \mapsto m_{\forall}\\
        \end{Bmatrix}
 \end{equation}
 
@@ -1129,18 +1130,18 @@ This yields the interpretation strategies in Table \ref{tab:gt-si-l0}: $u_{some}
  \lsptoprule
  $\mu_0(m|u)$ & $m_{\exists\neg\forall}$ & $m_{\forall}$\\
 \midrule
-$u_{some}$ & ½ & ½ \\
-$u_{all}$ & 0 & 1\\
+$u_{\textit{some}}$ & ½ & ½ \\
+$u_{\textit{all}}$ & 0 & 1\\
 \lspbottomrule
 \end{tabular}
 \caption{Posterior probabilities for the literal hearer $L_0$.\label{tab:gt-si-l0}}
 \end{table}
 
-The pragmatic speaker takes into account these interpretation strategies of the literal hearer. Since the hearer will unambiguously interpret $u_{all}$ as $m_{\forall}$ but might understand $u_{some}$ as either of the messages, $u_{all}$ has a higher \textit{utility} than $u_{some}$ to communicate $m_{\forall}$. In order to communicate $m_{\exists\neg\forall}$ the utility of $u_{all}$ is 0. Even though a literal hearer might interpret $u_{some}$ as $m_{\forall}$ half of the time, $u_{some}$ is the more promising option for the speaker to get the message across. This results in the following strategies:
+The pragmatic speaker takes into account these interpretation strategies of the literal hearer. Since the hearer will unambiguously interpret $u_{\textit{all}}$ as $m_{\forall}$ but might understand $u_{\textit{some}}$ as either of the messages, $u_{\textit{all}}$ has a higher \textit{utility} than $u_{\textit{some}}$ to communicate $m_{\forall}$. In order to communicate $m_{\exists\neg\forall}$ the utility of $u_{\textit{all}}$ is 0. Even though a literal hearer might interpret $u_{\textit{some}}$ as $m_{\forall}$ half of the time, $u_{\textit{some}}$ is the more promising option for the speaker to get the message across. This results in the following strategies:
 
 \begin{equation}
- S_1 = \begin{Bmatrix} t_{\exists\neg\forall} \mapsto m_{some}\\
-        t_{\forall} \mapsto m_{all}\\
+ S_1 = \begin{Bmatrix} t_{\exists\neg\forall} \mapsto m_{\textit{some}}\\
+        t_{\forall} \mapsto m_{\textit{all}}\\
        \end{Bmatrix}
 \end{equation}
 
@@ -1156,8 +1157,8 @@ This measure increases the higher the prior probability of $m$ is and the more l
 %
 
 \begin{equation}
-L_1 = \begin{Bmatrix} u_{some} \mapsto m_{\exists\neg\forall} \\
-        u_{all} \mapsto m_{\forall}\\
+L_1 = \begin{Bmatrix} u_{\textit{some}} \mapsto m_{\exists\neg\forall} \\
+        u_{\textit{all}} \mapsto m_{\forall}\\
        \end{Bmatrix}\label{eq:gt_l1}
 \end{equation}
 
@@ -1172,8 +1173,8 @@ Still though, it can model scalar implicatures both on the side of the hearer an
  \lsptoprule
  $\mu_0(m|u)$ & $m_{\exists\neg\forall}$ & $m_{\forall}$\\
 \midrule
-$u_{some}$ & ⅔ & ⅓ \\
-$u_{all}$ & 0 & 1\\
+$u_{\textit{some}}$ & ⅔ & ⅓ \\
+$u_{\textit{all}}$ & 0 & 1\\
 \lspbottomrule
 \end{tabular}
 \caption{Posterior probabilities for the pragmatic hearer $L_1$.\label{tab:gt-si-l1}}
@@ -1189,9 +1190,9 @@ Under the assumption that each ``word'' in these utterances can be omitted indep
 
 \begin{equation}
  U = \begin{Bmatrix}
-       pour \mathspace pasta \mathspace pot, pour \mathspace salt \mathspace pot,\\
-       pour \mathspace pasta, pour \mathspace pot, pour \mathspace salt, pasta \mathspace pot, salt \mathspace pot,\\
-       pour, pasta, pot, salt
+       \textit{pour} \mathspace \textit{pasta} \mathspace \textit{pot}, \textit{pour} \mathspace \textit{salt} \mathspace \textit{pot},\\
+       \textit{pour} \mathspace \textit{pasta}, \textit{pour} \mathspace \textit{pot}, \textit{pour} \mathspace \textit{salt}, \textit{pasta} \mathspace \textit{pot}, \textit{salt} \mathspace \textit{pot},\\
+       \textit{pour}, \textit{pasta}, \textit{pot}, \textit{salt}
       \end{Bmatrix}
 \end{equation}
 
@@ -1211,7 +1212,7 @@ $m_{pour \mathspace salt \mathspace pot}$ & 0.4 & 0,0 & 1,1 & -- & \ding{51} & -
 
 Applying game-theoretic\is{Game theory} reasoning to the production and interpretation of fragments requires a conceptual and a methodological modification to the approach by \citet{franke2009}. The theoretical modification concerns the relationship between utterances and messages. In the case of \citeauthor{franke2009}'s model, there are only complete utterances, and truth conditions determine whether an utterance is suitable for communicating a message. In the case of fragments however, it is not reasonable to assume that a noun phrase\is{Noun phrase} like \textit{pasta} is \textit{true} in a situation. Instead, the relationship between utterances and messages can be modeled by the suitability of an utterance to communicate a message: An utterance is classified as suitable for communicating a message if it can be derived by an arbitrary number of omissions from the message's full form: \texttt{pour pasta} can be derived from $m_{pour \mathspace pasta \mathspace pot}$ by omitting \texttt{pot}, whereas it cannot be derived from $m_{pour \mathspace salt \mathspace pot}$. Of course, this is a further simplification, because in reality each message can be encoded by a variety of nonelliptical utterances, which differ in the choice of lexical items and word order, among other properties. However, in principle the same reasoning can be applied to this situation: The set of utterances that can encode a message is restricted to those expressions that can be generated by grammatically licensed omissions from the set of full sentences that can encode this message.
 
-The methodological problem concerns ambiguous\is{Ambiguity} fragments. Since speakers use fragments, so it is reasonable to assume that in some situations fragments are more useful encodings than full sentences, so the model must allow for this outcome. However, the model so far predicts that fragments are sometimes as good as sentences, but never better than them: Complete sentences unambiguously identify the message intended by the hearer, so they are always preferred over potentially more vague fragments, just like the unambiguous\is{Ambiguity} $u_{all}$ has the highest utility in the scalar implicature game by \citet{franke2009}. Even though, at least in the example presented here, fragments like e.g. \texttt{salt} or \texttt{pasta} share this property, in this situation they are not preferred over the full sentence. The main advantage of fragments is that they perform the same function as sentences in less time and with a reduced production effort for the speaker. Therefore, it is reasonable to integrate a cost term into the model, which reduces the speaker utility of longer utterances by discounting a percentage of the utility for each word. This models the speaker's preference for producing shorter utterances, which will favor unambiguous\is{Ambiguity} fragments in the case of my example. In large-scale applications the cost term might even favor potentially ambiguous\is{Ambiguity} fragments, if the prior probability of the message as compared to competing messages and the reduction of production cost are large enough to outweigh the remaining ambiguity\is{Ambiguity}.
+The methodological problem concerns ambiguous\is{Ambiguity} fragments. Since speakers use fragments, so it is reasonable to assume that in some situations fragments are more useful encodings than full sentences, so the model must allow for this outcome. However, the model so far predicts that fragments are sometimes as good as sentences, but never better than them: Complete sentences unambiguously identify the message intended by the hearer, so they are always preferred over potentially more vague fragments, just like the unambiguous\is{Ambiguity} $u_{\textit{all}}$ has the highest utility in the scalar implicature game by \citet{franke2009}. Even though, at least in the example presented here, fragments like e.g. \texttt{salt} or \texttt{pasta} share this property, in this situation they are not preferred over the full sentence. The main advantage of fragments is that they perform the same function as sentences in less time and with a reduced production effort for the speaker. Therefore, it is reasonable to integrate a cost term into the model, which reduces the speaker utility of longer utterances by discounting a percentage of the utility for each word. This models the speaker's preference for producing shorter utterances, which will favor unambiguous\is{Ambiguity} fragments in the case of my example. In large-scale applications the cost term might even favor potentially ambiguous\is{Ambiguity} fragments, if the prior probability of the message as compared to competing messages and the reduction of production cost are large enough to outweigh the remaining ambiguity\is{Ambiguity}.
 
 \subsection{Application to natural language data}
 In principle it is possible to apply this model to the data set collected with experiment \ref{exp:scripts-production}. This data set contains an annotation layer of the message underlying each utterance, so that the prior probability of each of message in the scenario can easily be calculated. Based on the preprocessed data set it is also straightforward to determine which complete structures can used to communicate each message and hence to specify (i) the set of possible utterances and (ii) whether each of these utterances can be used to communicate a message. However, the simple example above showed that even when there are only two possible messages there are 11 possible utterances. Consequently, the about 100 utterances produced for each scenario in experiment \ref{exp:scripts-production} do not allow for a fine-grained investigation of the relationship between game-theoretic\is{Game theory} utility and omission. A larger and more homogeneous data set would be required to investigate the predictions of a game-theoretic\is{Game theory} account of fragment usage in detail.
